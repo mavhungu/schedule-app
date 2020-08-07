@@ -1,0 +1,42 @@
+.row {
+  justify-content: center;
+  align-content: center; }
+
+.load {
+  color: #00B7FF; }
+  .loadhover {
+    background: seagreen; }
+
+.card.hidden {
+  display: none; }
+
+.lead {
+  font-family: "Helvetica Neue"; }
+
+nav {
+  background: #1ab7d1; }
+
+.btn-light {
+  background: #ffc04d !important;
+  border-radius: 12px 0 12px 0;
+  color: white; }
+  .btn-light:hover {
+    color: white; }
+
+.navbar-toggler {
+  border-radius: 6px;
+  color: ghostwhite !important;
+  background: ghostwhite !important; }
+
+.radio:hover {
+  cursor: pointer; }
+
+body {
+  padding-top: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: ghostwhite; }
+
+a {
+  color: #00B7FF; }
+
+/*# sourceMappingURL=style.css.map */

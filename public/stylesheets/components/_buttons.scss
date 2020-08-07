@@ -1,0 +1,16 @@
+.btn-light{
+  background: lighten(orange,15%) !important;
+  border-radius: 12px 0 12px 0;
+  color: white;
+  &:hover{
+    color: white;
+  }
+}
+.navbar-toggler{
+  border-radius: 6px;
+  color: ghostwhite !important;
+  background: ghostwhite !important;
+}
+.radio:hover{
+  cursor: pointer;
+}

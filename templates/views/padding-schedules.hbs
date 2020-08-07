@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row align-items-center justify-content-center">
+        <div class="col">
+            <h1 class="d-flex justify-content-center mt-3">{{head}} </h1>
+            <!--p class="load d-flex justify-content-center"> Welcome to {{title}} </p-->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8 col-sm-12">
+            {{nodata}}
+            {{#data}}
+                <div class="card mb-1">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-10">
+                                <h3 class="">{{titles}}</h3>
+                                <p class=""> {{notes}}</p>
+                            </div>
+                            <div class="col-2">
+                                <!--button class="btn btn-primary mt-3 d-flex justify-content-center">Complete</button-->
+                                <!--input type="radio" class="form-control" name="" id="" aria-haspopup="true"-->
+                                <div class="form-group">
+                                    <input type="checkbox" class="form-control mt-3" name=`${{_id}}` id=`${{_id}}`>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{/data}}
+        </div>
+    </div>
+</div>

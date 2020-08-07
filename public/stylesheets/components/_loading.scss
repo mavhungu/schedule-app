@@ -1,0 +1,10 @@
+.row{
+  justify-content: center;
+  align-content: center;
+}
+.load{
+  color: #00B7FF;
+  &hover{
+    background: seagreen;
+  }
+}
