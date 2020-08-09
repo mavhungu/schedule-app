@@ -8,7 +8,7 @@ var app = require('../app');
 var debug = require('debug')('node-atlas:server');
 var http = require('http');
 
-var Users = require('../db/user');
+//var Users = require('../db/user');
 /**
  * Get port from environment and store in Express.
  */
