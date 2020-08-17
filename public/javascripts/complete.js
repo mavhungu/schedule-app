@@ -5,8 +5,8 @@ $(()=>{
       $('#'+m).addClass('hidden');
       $.ajax({
          method: "GET",
-         url: "http://localhost:3000/delete-schedule/"+m,
-         //url: "https://ronewa-schedule-app.herokuapp.com/"+m,
+         //url: "http://localhost:3000/delete-schedule/"+m,
+         url: "https://ronewa-schedule-app.herokuapp.com/"+m,
       })
           .done(()=> {
              $(document).ready(me)
@@ -14,8 +14,8 @@ $(()=>{
       var me = (()=>{
          $.ajax({
             method: "GET",
-            url: "http://localhost:3000/",
-            //url: "https://ronewa-schedule-app.herokuapp.com/"
+            //url: "http://localhost:3000/",
+            url: "https://ronewa-schedule-app.herokuapp.com/"
          })
       })
    });
