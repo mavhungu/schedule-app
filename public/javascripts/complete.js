@@ -6,7 +6,7 @@ $(()=>{
       $.ajax({
          method: "GET",
          //url: "http://localhost:3000/delete-schedule/"+m,
-         url: "https://ronewa-schedule-app.herokuapp.com/"+m,
+         url: "https://ronewa-schedule-app.herokuapp.com/delete-schedule/"+m,
       })
           .done(()=> {
              $(document).ready(me)
