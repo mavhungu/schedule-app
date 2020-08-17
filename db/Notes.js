@@ -10,9 +10,9 @@ const Notes = new schema({
         required: true,
         type: String,
         trim: true
-    }
-});
+    }});
 module.exports = mongoose.model('notes', Notes);*/
+
 
 const Notes = mongoose.model('notes',{
     titles:{
