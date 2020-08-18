@@ -84,7 +84,7 @@ router.get('/completed-schedules',(req, res)=>{
   })
 });
 
-router.get('/delete-schedule/:id',(req, res)=>{
+router.get('/complete-schedule/:id',(req, res)=>{
     const id = req.params.id;
     console.log(id);
     Notes.findOneAndUpdate({_id:id},{completed: true}).then((data)=> {
@@ -103,6 +103,18 @@ router.get('/delete-schedule/:id',(req, res)=>{
           res.status(500).send(e)
         })*/
       });
+    })
+});
+router.get('/delete-schedule/:id',(req, res)=>{
+    const id = req.params.id;
+    Notes.findByIdAndDelete(id).then((data)=>{
+       Notes.find({}).then((task)=>{
+           res.render('completed-schedules', {
+               title: 'Schedule App',
+               head: 'Schedules',
+               data: task
+           })
+       })
     })
 });
 

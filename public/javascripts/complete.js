@@ -5,7 +5,7 @@ $(()=>{
       $('#'+m).addClass('hidden');
       $.ajax({
          method: "GET",
-         url: "http://localhost:3000/delete-schedule/"+m,
+         url: "http://localhost:3000/complete-schedule/"+m,
          //url: "https://ronewa-schedule-app.herokuapp.com/delete-schedule/"+m,
       })
           .done(()=> {
@@ -22,8 +22,25 @@ $(()=>{
 
    $('.delete').click(()=>{
       var com = $("input[type=radio][name=delete]:checked").val();
-      $('.'+com).addClass('hide');
+      $('.'+com).addClass('hidden');
       console.log("delete clicked");
-   })
+
+      $.ajax({
+         method: "GET",
+         url: "http://localhost:3000/delete-schedule/"+com,
+         //url: "https://ronewa-schedule-app.herokuapp.com/delete-schedule/"+m,
+      })
+          .done(()=> {
+             $(document).ready(me)
+          });
+      var me = (()=>{
+         $.ajax({
+            method: "GET",
+            url: "http://localhost:3000/completed-schedules",
+            //url: "https://ronewa-schedule-app.herokuapp.com/"
+         })
+      })
+
+   });
 });
 
