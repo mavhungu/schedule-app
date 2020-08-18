@@ -11,11 +11,11 @@
 
     $(window).on('load', function() {
         handlePreloader();
-        enableMasonry();
+        /*enableMasonry();*/
     });
 
-    $('.image-large').magnificPopup({
+    /*$('.image-large').magnificPopup({
         type: 'image'
-    });
+    });*/
 
 })(window.jQuery);

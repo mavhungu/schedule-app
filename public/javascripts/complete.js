@@ -19,5 +19,11 @@ $(()=>{
          })
       })
    });
+
+   $('.delete').click(()=>{
+      var com = $("input[type=radio][name=delete]:checked").val();
+      $('.'+com).addClass('hide');
+      console.log("delete clicked");
+   })
 });
 

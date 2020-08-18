@@ -87,7 +87,7 @@ router.get('/completed-schedules',(req, res)=>{
 router.get('/delete-schedule/:id',(req, res)=>{
     const id = req.params.id;
     console.log(id);
-    Notes.findByIdAndDelete(id).then((data)=> {
+    Notes.findOneAndUpdate({_id:id},{completed: true}).then((data)=> {
       if(!data){
         console.log("Nothing has been found")
       }
