@@ -6,7 +6,7 @@ $(()=>{
       $.ajax({
          method: "GET",
          url: "http://localhost:3000/complete-schedule/"+m,
-         //url: "https://ronewa-schedule-app.herokuapp.com/delete-schedule/"+m,
+         //url: "https://ronewa-schedule-app.herokuapp.com/complete-schedule/"+m,
       })
           .done(()=> {
              $(document).ready(me)
@@ -28,7 +28,7 @@ $(()=>{
       $.ajax({
          method: "GET",
          url: "http://localhost:3000/delete-schedule/"+com,
-         //url: "https://ronewa-schedule-app.herokuapp.com/delete-schedule/"+m,
+         //url: "https://ronewa-schedule-app.herokuapp.com/delete-schedule/"+com,
       })
           .done(()=> {
              $(document).ready(me)
@@ -37,7 +37,7 @@ $(()=>{
          $.ajax({
             method: "GET",
             url: "http://localhost:3000/completed-schedules",
-            //url: "https://ronewa-schedule-app.herokuapp.com/"
+            //url: "https://ronewa-schedule-app.herokuapp.com/completed-schedules"
          })
       })
 

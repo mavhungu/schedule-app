@@ -59,7 +59,7 @@ router.get('/padding-schedules',(req, res)=>{
     res.render('padding-schedules',{
       title: 'Schedule App',
       head: `Padding Task's`,
-      data
+      data: data
     })
   }).catch((e)=>{
     res.status(500).send(e)
@@ -87,7 +87,7 @@ router.get('/completed-schedules',(req, res)=>{
 router.get('/complete-schedule/:id',(req, res)=>{
     const id = req.params.id;
     console.log(id);
-    Notes.findOneAndUpdate({_id:id},{completed: true}).then((data)=> {
+    Notes.findOneAndUpdate({_id:id},{completed: true, updated: Date.now()}).then((data)=> {
       if(!data){
         console.log("Nothing has been found")
       }
