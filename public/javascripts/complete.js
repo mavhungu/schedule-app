@@ -5,8 +5,8 @@ $(()=>{
       $('#'+m).addClass('hidden');
       $.ajax({
          method: "GET",
-         url: "http://localhost:3000/complete-schedule/"+m,
-         //url: "https://ronewa-schedule-app.herokuapp.com/complete-schedule/"+m,
+         //url: "http://localhost:3000/complete-schedule/"+m,
+         url: "https://ronewa-schedule-app.herokuapp.com/complete-schedule/"+m,
       })
           .done(()=> {
              $(document).ready(me)
@@ -14,8 +14,8 @@ $(()=>{
       var me = (()=>{
          $.ajax({
             method: "GET",
-            url: "http://localhost:3000/",
-            //url: "https://ronewa-schedule-app.herokuapp.com/"
+            //url: "http://localhost:3000/",
+            url: "https://ronewa-schedule-app.herokuapp.com/"
          })
       })
    });
@@ -27,8 +27,8 @@ $(()=>{
 
       $.ajax({
          method: "GET",
-         url: "http://localhost:3000/delete-schedule/"+com,
-         //url: "https://ronewa-schedule-app.herokuapp.com/delete-schedule/"+com,
+         //url: "http://localhost:3000/delete-schedule/"+com,
+         url: "https://ronewa-schedule-app.herokuapp.com/delete-schedule/"+com,
       })
           .done(()=> {
              $(document).ready(me)
@@ -36,8 +36,8 @@ $(()=>{
       var me = (()=>{
          $.ajax({
             method: "GET",
-            url: "http://localhost:3000/completed-schedules",
-            //url: "https://ronewa-schedule-app.herokuapp.com/completed-schedules"
+            //url: "http://localhost:3000/completed-schedules",
+            url: "https://ronewa-schedule-app.herokuapp.com/completed-schedules"
          })
       })
 

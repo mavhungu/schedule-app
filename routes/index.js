@@ -8,7 +8,7 @@ router.get('/', function(req, res, next){
   Notes.find({}).then((data)=>{
     //console.log(data);
     if(!data){
-      console.log("Nothing at the moment");
+      return console.log("Nothing at the moment");
     }
     res.render('index', {
       title: 'Schedule App',
@@ -31,7 +31,7 @@ router.post('/add-schedule',(req, res)=>{
   console.log(req.body);
   data.save().then((data)=>{
     if(!data){
-      res.render('new-schedule',{
+      return res.render('new-schedule',{
         title: 'Error',
         head: 'Error'
       })
@@ -50,11 +50,12 @@ router.post('/add-schedule',(req, res)=>{
 router.get('/padding-schedules',(req, res)=>{
   Notes.find({completed: false}).then((data)=>{
     if(!data){
-      res.render('completed-schedules',{
+      console.log("No data");
+      return res.render('completed-schedules',{
         title: 'Schedule App',
-        head: `Completed Task's`,
-        nodata: 'No record has been found'
-      })
+        head: 'Completed Task\'s',
+        data: 'No record has been found'
+      });
     }
     res.render('padding-schedules',{
       title: 'Schedule App',
@@ -84,16 +85,16 @@ router.get('/completed-schedules',(req, res)=>{
   })
 });
 
-router.get('/complete-schedule/:id',(req, res)=>{
+router.get('/complete-schedule/:id', async (req, res)=>{
     const id = req.params.id;
     console.log(id);
-    Notes.findOneAndUpdate({_id:id},{completed: true, updated: Date.now()}).then((data)=> {
+    await Notes.findOneAndUpdate({_id:id},{completed: true, updated: Date.now()}).then((data)=> {
       if(!data){
-        console.log("Nothing has been found")
+        return console.log("Nothing has been found")
       }
       Notes.find({}).then((task) => {
         if(!task){
-          console.log("No records");
+          return console.log("No records");
         }
         res.render('index', {
           title: 'Schedule App',
