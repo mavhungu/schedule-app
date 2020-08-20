@@ -29,6 +29,20 @@ $(()=>{
          method: "GET",
          url: "http://localhost:3000/delete-schedule/"+com,
          //url: "https://ronewa-schedule-app.herokuapp.com/delete-schedule/"+com,
+          cache : false,
+          success : function (data) {
+         // data is the object that you send form the server by
+         // res.jsonp();
+         // here data = {success : true}
+         // validate it
+         if(data['success']){
+            alert("message you want to show");
+         }
+      },
+      error : function () {
+         // some error handling part
+         alert("Oops! Something went wrong.");
+      }
       })
           .done(()=> {
              $(document).ready(me)

@@ -5,7 +5,7 @@ var Notes = require('../db/Notes');
 
 /* GET home page. */
 router.get('/', function(req, res, next){
-  Notes.find({}).sort({ titles:'asc'}).then((data)=>{
+  Notes.find({}).sort({ created: 'desc', titles: 'asc'}).then((data)=>{
     //console.log(data);
     if(!data){
       return console.log("Nothing at the moment");
@@ -48,7 +48,7 @@ router.post('/add-schedule',(req, res)=>{
   });
 });
 router.get('/padding-schedules',(req, res)=>{
-  Notes.find({completed: false}).then((data)=>{
+  Notes.find({completed: false}).sort({created: 'desc'}).then((data)=>{
     if(!data){
       console.log("No data");
       return res.render('completed-schedules',{
@@ -67,7 +67,7 @@ router.get('/padding-schedules',(req, res)=>{
   })
 });
 router.get('/completed-schedules',(req, res)=>{
-  Notes.find({completed: true}).sort({ titles: 'asc'}).then((data)=>{
+  Notes.find({completed: true}).sort({ updated: 'desc'}).then((data)=>{
     if(!data){
       res.render('completed-schedules',{
         title: 'Schedule App',
@@ -84,7 +84,6 @@ router.get('/completed-schedules',(req, res)=>{
     res.status(500).send(e)
   })
 });
-
 router.get('/complete-schedule/:id', async (req, res)=>{
     const id = req.params.id;
     console.log(id);
