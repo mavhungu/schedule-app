@@ -40,8 +40,12 @@ nav {
   color: ghostwhite !important;
   background: ghostwhite !important; }
 
-.radio:hover {
-  cursor: pointer; }
+/*.radio:hover{
+  cursor: pointer;
+}*/
+.delete, .padding, .update, .radio:hover {
+  cursor: pointer;
+  background-color: red !important; }
 
 body {
   padding-top: 50px;

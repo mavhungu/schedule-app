@@ -34,8 +34,8 @@ const Notes = mongoose.model('notes',{
         type: Boolean
     },
     created:{
-      type: Date,
-        default: Date.now()
+        type: Date,
+        default: Date.now
     },
     updated:{
         type: Date

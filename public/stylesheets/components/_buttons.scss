@@ -11,6 +11,11 @@
   color: ghostwhite !important;
   background: ghostwhite !important;
 }
-.radio:hover{
+/*.radio:hover{
   cursor: pointer;
+}*/
+.delete,.padding,.update,.radio:hover{
+  cursor: pointer;
+  background-color: red !important;
+
 }

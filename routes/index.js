@@ -5,7 +5,7 @@ var Notes = require('../db/Notes');
 
 /* GET home page. */
 router.get('/', function(req, res, next){
-  Notes.find({}).then((data)=>{
+  Notes.find({}).sort({ titles:'asc'}).then((data)=>{
     //console.log(data);
     if(!data){
       return console.log("Nothing at the moment");
@@ -67,7 +67,7 @@ router.get('/padding-schedules',(req, res)=>{
   })
 });
 router.get('/completed-schedules',(req, res)=>{
-  Notes.find({completed: true}).then((data)=>{
+  Notes.find({completed: true}).sort({ titles: 'asc'}).then((data)=>{
     if(!data){
       res.render('completed-schedules',{
         title: 'Schedule App',
@@ -92,7 +92,7 @@ router.get('/complete-schedule/:id', async (req, res)=>{
       if(!data){
         return console.log("Nothing has been found")
       }
-      Notes.find({}).then((task) => {
+      Notes.find({}).sort({updated: 'desc'}).then((task) => {
         if(!task){
           return console.log("No records");
         }

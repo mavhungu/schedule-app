@@ -3,9 +3,11 @@ var express = require('express');
 var cors = require('cors');
 var path = require('path');
 var hbs = require('hbs');
+var moment = require('moment'); // require
+
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var db = require('./db/DBConnect');
+require('./db/DBConnect');
 var sassMiddleware = require('node-sass-middleware');
 var viewPartials = path.join(__dirname, 'templates/partials');
 var viewPath = path.join(__dirname, 'templates/views');
@@ -14,11 +16,17 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
-
+moment().format();
 // view engine setup
 app.set('view engine', 'hbs');
 app.set('views',viewPath);
 hbs.registerPartials(viewPartials);
+hbs.registerHelper("prettifyDate", function(updated) {
+  return moment(new Date(updated)).fromNow();
+});
+hbs.registerHelper("prettifyDate", function(created) {
+  return moment(new Date(created)).fromNow();
+});
 
 app.use(logger('dev'));
 app.use(cors());
