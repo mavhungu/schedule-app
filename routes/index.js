@@ -71,13 +71,13 @@ router.get('/completed-schedules',(req, res)=>{
     if(!data){
       res.render('completed-schedules',{
         title: 'Schedule App',
-        head: `Completed Task's`,
+        head: `Finished Task's`,
         nodata: 'No record has been found'
       })
     }
     res.render('completed-schedules',{
       title: 'Schedule App',
-      head: `Completed Task's`,
+      head: `Finished Task's`,
       data: data
     })
   }).catch((e)=>{
