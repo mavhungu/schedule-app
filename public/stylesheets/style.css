@@ -44,8 +44,19 @@ nav {
   cursor: pointer;
 }*/
 .delete, .padding, .update, .radio:hover {
-  cursor: pointer;
-  background-color: red !important; }
+  cursor: pointer; }
+
+.times {
+  color: red;
+  font-size: 1em; }
+  .times:hover {
+    color: tomato; }
+
+.check {
+  color: #1ab7d1;
+  font-size: 1em; }
+  .check:hover {
+    color: #1ab7d1; }
 
 body {
   padding-top: 50px;

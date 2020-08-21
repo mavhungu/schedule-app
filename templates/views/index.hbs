@@ -28,8 +28,11 @@
                             <div class="col-2">
                                 <div class="form-group">
                                     {{#if updated}}
+                                        <a href="#" role="button" class="btn mt-3 times disabled" aria-disabled="true"><span class="fa fa-times mt-3"></span> </a>
                                         {{else}}
-                                        <input type="radio" class="form-control mt-3 radio" name="titles" value="{{_id}}" id='{{_id}}' title="upadate">
+                                        <!--input type="radio" class="form-control mt-3 radio" name="titles" value="{{_id}}" id='{{_id}}' title="upadate"-->
+                                        <!--a-- class="btn btn-light text-muted">Comp</a-->
+                                        <a href="#" class="btn mt-3 check" role="button" ><span class="fa fa-check mt-3"></span> </a>
                                     {{/if}}
                                 </div>
                             </div>
