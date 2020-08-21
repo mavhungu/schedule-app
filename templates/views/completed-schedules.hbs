@@ -7,7 +7,6 @@
     </div>
     <div class="row">
         <div class="col-lg-8 col-sm-12">
-            {{nodata}}
             {{#data}}
                 <div class="card mb-1 {{_id}}" id="{{_id}}">
                     <div class="card-body">
@@ -28,6 +27,16 @@
                     </div>
                 </div>
             {{/data}}
+
+            {{#unless data}}
+                <div class="card mb-1 bg-warning mt-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <h4 class="text-white">No Completed Task has been found</h4>
+                        </div>
+                    </div>
+                </div>
+            {{/unless}}
         </div>
     </div>
 </div>

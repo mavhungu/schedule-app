@@ -7,7 +7,6 @@
     </div>
     <div class="row">
         <div class="col-lg-8 col-sm-12">
-
             {{#data}}
                 <div class="card mb-1 {{_id}}" id="{{_id}}">
                     <div class="card-body">
@@ -29,6 +28,16 @@
                     </div>
                 </div>
             {{/data}}
+
+            {{#unless data}}
+                <div class="card mb-1 mt-3 bg-warning">
+                    <div class="card-body">
+                        <div class="row">
+                            <h4 class="text-white">No Padding Task has been found</h4>
+                        </div>
+                    </div>
+                </div>
+            {{/unless}}
         </div>
     </div>
 </div>

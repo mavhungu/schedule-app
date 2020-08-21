@@ -8,7 +8,7 @@ Schedule App is an App designed by Mavhungu Ronewa using Nodejs
 ### Prerequisites
 ```
 1. NodeJS
-2. MongoDB
+2. MongoDB Atlas
 ```
 ### Installation
 ```

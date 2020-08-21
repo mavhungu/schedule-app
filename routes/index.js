@@ -16,6 +16,9 @@ router.get('/', function(req, res, next){
       message: "No records",
       data: data
     });
+    /*res.json({
+        data
+    })*/
   }).catch((e)=>{
     res.status(500).send(e)
   })
