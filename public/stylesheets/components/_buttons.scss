@@ -5,6 +5,20 @@
   &:hover{
     color: white;
   }
+  &:active{
+    color: white;
+  }
+}
+.btn-reset{
+  background: lighten(tomato,15%) !important;
+  border-radius: 0px 12px 0px 12px;
+  color: white;
+  &:hover{
+    color: white;
+  }
+  &:active{
+    color: white;
+  }
 }
 .navbar-toggler{
   border-radius: 6px;

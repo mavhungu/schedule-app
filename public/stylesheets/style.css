@@ -34,6 +34,17 @@ nav {
   color: white; }
   .btn-light:hover {
     color: white; }
+  .btn-light:active {
+    color: white; }
+
+.btn-reset {
+  background: #ffa494 !important;
+  border-radius: 0px 12px 0px 12px;
+  color: white; }
+  .btn-reset:hover {
+    color: white; }
+  .btn-reset:active {
+    color: white; }
 
 .navbar-toggler {
   border-radius: 6px;
