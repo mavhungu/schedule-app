@@ -1,56 +1,60 @@
-<div class="container">
-    <div class="row align-items-center justify-content-center">
-        <div class="col">
+<!--div class="container-fluid">
+    <div class="row">
+
+        <div class="col"-->
             <h1 class="d-flex justify-content-center mt-2 text-muted">{{head}} </h1>
             <p class="load d-flex justify-content-center"> Welcome to {{title}} </p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-8 col-sm-12">
 
-            <div class="form-group">
-                <a class="btn btn-light" type="button" href="/add-schedule">Add Schedule <span class="fa fa-plus"></span> </a>
-            </div>
+            <div class="row">
+                <div class="col-lg-8 col-sm-12">
 
-            {{#data}}
-                <div class="card mb-1 {{_id}}" id="{{_id}}">
-                    <div class="card-body">
-                        <div class="row">
-                            <!--div-- class="col-1"-->
-                                <!--a type="button" class="mt-3"><span class="fa fa-times mt-3"></span> </a-->
-                            <!--/div-->
-                            <div class="col-10">
-                                <h3 class="">{{titles}}</h3>
-                                    <p class="">{{notes}}</p>
-                                <p class="text-muted disabled" style="font-size:11px;">{{prettifyDate created}}</p>
-                            </div>
-                            <div class="col-2">
-                                <div class="form-group">
-                                    {{#if updated}}
-                                        <a href="#" role="button" class="btn mt-3 times disabled" aria-disabled="true"><span class="fa fa-times mt-3"></span> </a>
-                                        {{else}}
-                                        <!--input type="radio" class="form-control mt-3 radio" name="titles" value="{{_id}}" id='{{_id}}' title="upadate"-->
-                                        <!--a-- class="btn btn-light text-muted">Comp</a-->
-                                        <a href="#" class="btn mt-3 check" role="button" ><span class="fa fa-check mt-3"></span> </a>
-                                    {{/if}}
+                    <div class="form-group">
+                        <a class="btn btn-light" type="button" href="/add-schedule">Add Schedule <span class="fa fa-plus"></span> </a>
+                    </div>
+
+                    {{#data}}
+                        <div class="card mb-1 {{_id}}" id="{{_id}}">
+                            <div class="card-body">
+                                <div class="row">
+                                    <!--div-- class="col-1"-->
+                                    <!--a type="button" class="mt-3"><span class="fa fa-times mt-3"></span> </a-->
+                                    <!--/div-->
+                                    <div class="col-10">
+                                        <h3 class="">{{titles}}</h3>
+                                        <p class="">{{notes}}</p>
+                                        <p class="text-muted disabled" style="font-size:11px;">{{prettifyDate created}}</p>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="form-group">
+                                            {{#if updated}}
+                                                <a href="#" role="button" class="btn mt-3 times disabled" aria-disabled="true"><span class="fa fa-times mt-3"></span> </a>
+                                            {{else}}
+                                                <!--input type="radio" class="form-control mt-3 radio" name="titles" value="{{_id}}" id='{{_id}}' title="upadate"-->
+                                                <!--a-- class="btn btn-light text-muted">Comp</a-->
+                                                <a href="#" class="btn mt-3 check" role="button" ><span class="fa fa-check mt-3"></span> </a>
+                                            {{/if}}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            {{/data}}
+                    {{/data}}
 
-            {{#unless data}}
-            <div class="card mb-1 mt-3 bg-warning">
-                <div class="card-body">
-                    <div class="row">
-                        <h4 class="text-white">No Task has been found</h4>
-                    </div>
+                    {{#unless data}}
+                        <div class="card mb-1 mt-3 bg-info">
+                            <div class="card-body">
+                                <div class="row">
+                                    <h4 class="text-white">No Task has been found</h4>
+                                </div>
+                            </div>
+                        </div>
+                    {{/unless}}
+
                 </div>
             </div>
-            {{/unless}}
 
-        </div>
+        <!--/div>
     </div>
-</div>
+
+</div-->
 

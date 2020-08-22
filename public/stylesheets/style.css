@@ -26,7 +26,9 @@
   background-image: url(../../images/icons/preloader.svg); }
 
 nav {
-  background: #1ab7d1; }
+  background: #1ab7d1;
+  margin-bottom: 0;
+  border-bottom: 1px solid #1ab7d1; }
 
 .btn-light {
   background: #ffc04d !important;
@@ -46,11 +48,11 @@ nav {
   .btn-reset:active {
     color: white; }
 
-.navbar-toggler {
+/*.navbar-toggler{
   border-radius: 6px;
   color: ghostwhite !important;
-  background: ghostwhite !important; }
-
+  background: ghostwhite !important;
+}*/
 /*.radio:hover{
   cursor: pointer;
 }*/
@@ -72,6 +74,44 @@ nav {
 .form-group input[type=radio][name=titles] {
   background-color: #00B7FF;
   border-color: #4c4; }
+
+@media (min-width: 768px) {
+  .app-sidebar_toggle {
+    display: none; } }
+
+@media (max-width: 767.98px) {
+  .app-sidebar_toggle {
+    order: -1; }
+  .app-aside {
+    left: -230px; } }
+
+.app-aside {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding-top: 70px;
+  position: fixed;
+  overflow: auto;
+  z-index: 10;
+  background: #7cdeef;
+  box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
+  transition: left 0.3s ease, width 0.3s ease; }
+
+.app-sidebar_toggle {
+  color: #fff;
+  transform: background-color 0.3s ease; }
+  .app-sidebar_toggle:focus, .app-sidebar_toggle:hover {
+    color: #fff;
+    text-decoration: none; }
+
+@media (max-width: 480px) {
+  .app-aside {
+    left: -230px;
+    transition: all 0.3s ease, width 0.3s ease; }
+  .app.app-slidebar-toggled .app-aside {
+    margin-left: 230px;
+    width: 530px;
+    transition: all 0.3s ease, width 0.3s ease; } }
 
 body {
   padding-top: 50px;
