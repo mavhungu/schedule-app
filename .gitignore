@@ -1,3 +1,8 @@
-/node_modules
+# Node artifact files
+node_modules/
+
+# Config files
 .env
 config.js
+# JetBrains IDE
+.idea/

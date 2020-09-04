@@ -8,6 +8,7 @@ var moment = require('moment'); // require
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 require('./db/DBConnect');
+require('dotenv').config();
 var sassMiddleware = require('node-sass-middleware');
 var viewPartials = path.join(__dirname, 'templates/partials');
 var viewPath = path.join(__dirname, 'templates/views');

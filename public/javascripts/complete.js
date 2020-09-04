@@ -1,23 +1,19 @@
 $(()=>{
    "use strict";
+   const reload = (()=>{
+      window.location.href = window.location.href;
+   });
    $('.radio').click(()=>{
       var m = $("input[type=radio][name=titles]:checked").val();
       $('#'+m).addClass('hidden');
       $.ajax({
          method: "GET",
-         url: "http://localhost:3000/complete-schedule/"+m,
-         //url: "https://ronewa-schedule-app.herokuapp.com/complete-schedule/"+m,
+         //url: "http://localhost:5000/complete-schedule/"+m,
+         url: "https://ronewa-schedule-app.herokuapp.com/complete-schedule/"+m,
       })
           .done(()=> {
-             $(document).ready(me)
+             $(document).ready(reload);
           });
-      var me = (()=>{
-         $.ajax({
-            method: "GET",
-            url: "http://localhost:3000/",
-            //url: "https://ronewa-schedule-app.herokuapp.com/"
-         })
-      })
    });
 
    $('.delete').click(()=>{
@@ -27,34 +23,12 @@ $(()=>{
 
       $.ajax({
          method: "GET",
-         url: "http://localhost:3000/delete-schedule/"+com,
-         //url: "https://ronewa-schedule-app.herokuapp.com/delete-schedule/"+com,
-          cache : false,
-          success : function (data) {
-         // data is the object that you send form the server by
-         // res.jsonp();
-         // here data = {success : true}
-         // validate it
-         if(data['success']){
-            alert("message you want to show");
-         }
-      },
-      error : function () {
-         // some error handling part
-         alert("Oops! Something went wrong.");
-      }
+         //url: "http://localhost:5000/delete-schedule/"+com,
+         url: "https://ronewa-schedule-app.herokuapp.com/delete-schedule/"+com,
       })
           .done(()=> {
-             $(document).ready(me)
+             $(document).ready(reload)
           });
-      var me = (()=>{
-         $.ajax({
-            method: "GET",
-            url: "http://localhost:3000/completed-schedules",
-            //url: "https://ronewa-schedule-app.herokuapp.com/completed-schedules"
-         })
-      })
-
    });
 });
 

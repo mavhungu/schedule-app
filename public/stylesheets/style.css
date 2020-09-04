@@ -30,6 +30,9 @@ nav {
   margin-bottom: 0;
   border-bottom: 1px solid #1ab7d1; }
 
+.change {
+  color: #bfbfbf; }
+
 .btn-light {
   background: #ffc04d !important;
   border-radius: 12px 0 12px 0;
@@ -93,9 +96,16 @@ nav {
   position: fixed;
   overflow: auto;
   z-index: 10;
-  background: #7cdeef;
+  background: #1ab7d1;
   box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
   transition: left 0.3s ease, width 0.3s ease; }
+
+.app-aside.aside_minimise {
+  width: 53px !important;
+  transition: left 0.4s ease, width 0.4s ease; }
+
+.aside_span .lead_info.aside_lead_hide {
+  display: none; }
 
 .app-sidebar_toggle {
   color: #fff;
@@ -104,13 +114,17 @@ nav {
     color: #fff;
     text-decoration: none; }
 
+.aside_span {
+  margin-top: 5px;
+  margin-bottom: 5px; }
+
 @media (max-width: 480px) {
   .app-aside {
-    left: -230px;
+    left: -530px;
     transition: all 0.3s ease, width 0.3s ease; }
   .app.app-slidebar-toggled .app-aside {
-    margin-left: 230px;
-    width: 530px;
+    margin-left: 530px;
+    width: 180px;
     transition: all 0.3s ease, width 0.3s ease; } }
 
 body {

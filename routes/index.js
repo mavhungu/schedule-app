@@ -39,13 +39,14 @@ router.post('/add-schedule',(req, res)=>{
         head: 'Error'
       })
     }
-    res.render('new-schedule',{
+    /*res.render('new-schedule',{
       message: "Successfully saved",
       data: data,
       title: 'Add-Schedule',
       head: 'New Schedule',
       tt: 'New data has been added'
-    })
+    }
+    )*/ res.redirect(303,'/')
   }).catch((e)=>{
     res.status(500).send(e)
   });
