@@ -9,8 +9,8 @@
       <link rel="stylesheet" href="/fontawesome-free/css/all.css">
       <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
       <link rel="stylesheet" href="/stylesheets/bootstrap.css">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-      <!--link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"-->
+      <link rel='stylesheet' href='/stylesheets/style.css' />
+      <link rel="stylesheet" href="/stylesheets/switchery.min.css">
 
   </head>
   <body class="app">
@@ -22,61 +22,119 @@
                 <div class="col-md-2 col-sm-2 col-xs-2 app-aside">
                     <div class="row">
                         <div class="col p-2">
-                            <a role="button" class="aside_minimise"><span class="fa fa-step-backward float-right fa-1x"></span></a>
+                            <a role="button" class="aside_minimise">
+                                <span class="aside_mini fa fa-step-backward float-right fa-1x text-white"></span>
+                                <!--span--- class="aside_minis fa fa-step-forward float-right fa-1x text-white hide"></span--->
+                            </a>
                         </div>
                     </div>
-                        <!--div-- class="row mt-2">
-                            <div class="col aside_span">
-                                <p><span class="fa fa-house-user fa-2x change"></span>
-                                    <span class="lead lead_info justify-content-center align-items-center">House P  </span>
-                                </p>
-                                <p><span class="fa fa-shoe-prints fa-2x change"></span>
-                                    <span class="lead lead_info align-content-center">Shoe Print  </span>
-                                </p>
-                                <p><span class="fa fa-dumbbell fa-2x change"></span>
-                                    <span class="lead lead_info ">Dumbbel  </span>
-                                </p>
-                            </div>
-                        </div-->
-
                     <div class="row aside_span">
-                        <div class="col-12 bg-success">
-                            <div class="row">
-                                <div class="col-2">
-                                    <span class="fa fa-house-user"></span>
-                                </div>
-                                <div class="col-10">
-                                    <p class="lead_info">PPPPPPP</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row aside_span bg-light">
-                        <div class="col-2">
-                            <span class="fa fa-shoe-prints"></span>
-                        </div>
-                        <div class="col">
-                            <p class="lead_info">Ronewa</p>
-                        </div>
-                    </div>
-
-                    <div class="row aside_span">
-                        <div class="card mb-3">
-                            <div class="row no-gutters">
-                                <div class="col-2">
-                                    <!--img src="..." class="card-img" alt="..."-->
-                                    <span class="fa fa-shoe-prints"></span>
-                                </div>
-                                <div class="col lead_info">
-                                    <div class="">
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <div class="col-12">
+                            <div class="accordion" id="accordionExample">
+                                <div class="One">
+                                    <div class="row no-gutters">
+                                        <div class="col-2 mt-2">
+                                            <!--img src="..." class="card-img" alt="..."-->
+                                            <span class="fa fa-hand-middle-finger text-white"></span>
+                                        </div>
+                                        <div class="col lead_info mt-2">
+                                            <div class="">
+                                                <a class="card-text text-light text-decoration-none" data-toggle="collapse" data-target="#collapseOnes" role="button">
+                                                    <small class="text">Active</small>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-2 mt-2 lead_chevron">
+                                            <a class="text-decoration-none text-white text-left" role="button" data-toggle="collapse" data-target="#collapseOnes" aria-expanded="true" aria-controls="collapseOnes">
+                                                <span class="fa fa-chevron-down float-right text-light"></span>
+                                            </a>
+                                        </div>
                                     </div>
+
+                                    <div id="collapseOnes" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row no-gutters">
+                                                    <div class="col-2 mt-1 pb-1">
+                                                        <span class="fa fa-school text-secondary"></span>
+                                                    </div>
+                                                    <div class="col lead_info mt-1 pb-1">
+                                                        <div class="">
+                                                            <a class="text-decoration-none text-white text-left" role="button" href="/padding-schedules">
+                                                                <small class="text">Select</small>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-2 mt-1 pb-1 lead_chevron">
+                                                        <a class="text-decoration-none text-white text-left" role="button" data-toggle="collapse" data-target="#collapseOnes" aria-expanded="true" aria-controls="collapseOnes">
+                                                            <span class="fa fa-chevron-right float-right text-light"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row no-gutters">
+                                                    <div class="col-2 mt-2">
+                                                        <span class="fa fa-book text-secondary"></span>
+                                                    </div>
+                                                    <div class="col lead_info mt-2">
+                                                        <div class="">
+                                                            <a class="card-text text-light text-decoration-none" href="/completed-schedules" role="button">
+                                                                <small class="text">Activate</small>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-2 mt-2 lead_chevron">
+                                                        <a class="text-decoration-none text-white text-left" role="button" data-toggle="collapse" data-target="#collapseOnes" aria-expanded="true" aria-controls="collapseOnes">
+                                                            <span class="fa fa-chevron-right float-right text-light"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="Two">
+                                        <div class="row no-gutters">
+                                            <div class="col-2 mt-2 p-0">
+                                                <!--img src="..." class="card-img" alt="..."-->
+                                                <span class="fa fa-shoe-prints"></span>
+                                            </div>
+                                            <div class="col lead_info mt-2">
+                                                <div class="">
+                                                    <a class="card-text text-light text-decoration-none" data-toggle="collapse" data-target="#collapseTwo" role="button">
+                                                        <small class="text">Paddingss</small>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-2 mt-2 lead_chevron">
+                                                <a class="text-decoration-none text-white text-left" role="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOnes">
+                                                    <span class="fa fa-chevron-down float-right text-light"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                Sustainable VHS.
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
 
-
+                    <div class="row">
+                        <p class="mb-3">
+                            <input type="checkbox" class="js-switch" name="checkbox" data-color="#3498db" checked/>
+                        </p>
+                    </div>
                 </div><!-- END OF ASIDE-PANEL-->
                     <div class="col">
                         {{{body}}}
@@ -89,13 +147,74 @@
 <script src="/javascripts/bootstrap.js"></script>
 <script src="/javascripts/complete.js"></script>
   <script src="/javascripts/costume.js"></script>
+  <script src="/javascripts/switchery.min.js"></script>
 
   <!--script src="https://code.jquery.com/jquery-1.12.4.js"></script-->
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
       $( function() {
-          $( "#datepicker" ).datepicker();
+          $( "#end_date" ).datepicker();
+          $( "#start_date" ).datepicker();
       } );
+      var d = new Date(),
+          day = '' + d.getDate(),
+          month = '' + (d.getMonth() + 1),
+          year = d.getFullYear();
+       console.log([year, month, day].join('-'));
+       function dd(){
+           alert("Owk");
+       }
+  </script>
+  <script>
+      var switchery = {};
+      $.fn.initComponents = function () {
+          //Init CheckBox Style
+          var searchBy = ".js-switch";
+          $(this).find(searchBy).each(function (i, html) {
+              //debugger;
+              if (!$(html).next().hasClass("switchery")) {
+                  switchery[html.getAttribute('id')] = new Switchery(html, $(html).data());
+              }
+          });
+      };
+      $(document).ready(function(){
+          $("body").initComponents();
+
+          $("#btn_1").click(function(){
+              switchery["chk_1"].setPosition(true);
+          });
+
+          $("#btn_2").click(function(){
+              if(switchery["chk_2"].isDisabled())
+              {
+                  switchery["chk_2"].enable();
+              }else{
+                  switchery["chk_2"].disable();
+              }
+          });
+
+          $("#btn_3").click(function(){
+              switchery["chk_3"].handleOnchange(true);
+          });
+
+          $("#chk_3").change(function(){
+              alert("change here");
+          });
+      });
+
+
+      $(window).scroll(function(){
+          let position = $(this).scrollTop();
+
+          console.log(position);
+
+          /*if(position >=350){
+              $('.gallery').addClass('change');
+          }else{
+              $('.gallery').removeClass('change');
+          }*/
+
+      });
   </script>
 
 </html>

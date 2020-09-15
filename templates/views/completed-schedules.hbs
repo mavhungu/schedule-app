@@ -6,7 +6,7 @@
         </div>
     </div-->
     <div class="row">
-        <div class="col-lg-8 col-sm-12">
+        <div class="col-lg-8 col-sm-12 formContainer">
             {{#data}}
                 <div class="card mb-1 {{_id}}" id="{{_id}}">
                     <div class="card-body">
@@ -19,8 +19,8 @@
                             <div class="col-2">
                                 <!--button class="btn btn-primary mt-3 d-flex justify-content-center">Delete</button-->
                                 <!--input type="radio" class="form-control" name="" id="" aria-haspopup="true"-->
-                                <div class="form-group">
-                                    <input type="radio" class="form-control mt-3 delete" name="delete" value="{{_id}}" id='{{_id}}' title="Delete">
+                                <div class="form-group mt-4">
+                                    <input type="radio" class="form-control delete" name="delete" value="{{_id}}" id='{{_id}}' title="Delete">
                                 </div>
                             </div>
                         </div>

@@ -30,6 +30,12 @@ const Notes = mongoose.model('notes',{
         required: true,
         trim:true
     },
+    start_date:{
+        type: Date
+    },
+    end_date:{
+        type: Date
+    },
     completed:{
         type: Boolean
     },
