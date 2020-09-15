@@ -19,20 +19,20 @@
                                     <!--div-- class="col-1"-->
                                     <!--a type="button" class="mt-3"><span class="fa fa-times mt-3"></span> </a-->
                                     <!--/div-->
-                                    <div class="col-10">
+                                    <div class="col-8">
                                         <h3 class="">{{titles}}</h3>
                                         <p class="">{{notes}}</p>
                                         <p class="text-muted disabled" style="font-size:11px;">{{prettifyDate created}}</p>
                                     </div>
-                                    <div class="col-2">
-                                        <div class="form-group mt-4">
+                                    <div class="col-4">
+                                        <div class="form-group mt-4 text-center">
                                             {{#if updated}}
-                                                <a role="button" class="times disabled" aria-disabled="true"><span class="fa fa-times mt-3"></span> </a>
+                                                <a role="button" class="times disabled text-danger" aria-disabled="true"><span class="fa fa-times fa-2x"></span> </a>
                                             {{else}}
                                                 <!--input type="radio" class="form-control mt-3 radio" name="titles" value="{{_id}}" id='{{_id}}' title="upadate"-->
                                                 <!--a-- class="btn btn-light text-muted">Comp</a-->
-                                                <a onclick="dd();" href="#" class="check" role="button" ><span class="fa fa-check mt-3"></span> </a>
-                                                <p class="" style="font-size:11px;">{{end_date}}</p>
+                                                <a onclick="dd();" href="#" class="check" role="button" ><span class="fa fa-check fa-2x"></span> </a>
+                                                <p class="text-muted disabled text-center" style="font-size:11px;"> Due : {{prettify end_date}}</p>
                                             {{/if}}
                                         </div>
                                     </div>

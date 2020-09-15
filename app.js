@@ -28,6 +28,9 @@ hbs.registerHelper("prettifyDate", function(updated) {
 hbs.registerHelper("prettifyDate", function(created) {
   return moment(new Date(created)).fromNow();
 });
+hbs.registerHelper("prettify", function(end_date) {
+  return moment(new Date(end_date)).calendar();
+});
 
 app.use(logger('dev'));
 app.use(cors());
