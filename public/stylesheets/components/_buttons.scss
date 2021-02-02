@@ -42,7 +42,7 @@
   }
 }
 .check{
-  color: #1ab7d1;
+  color: lighten(#1ab7d1,25%);
   font-size: 1em;
   &:hover{
     color: #1ab7d1;
@@ -50,5 +50,8 @@
 }
 .form-group input[type=radio][name=titles]{
   background-color: #00B7FF;
-  border-color: #4c4;
+  border-color: lighten(#4c4,80%)!important;
+}
+.delete:hover{
+  color: red !important;
 }

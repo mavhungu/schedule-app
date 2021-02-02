@@ -12,9 +12,9 @@ router.get('/', function(req, res, next){
     }
     res.render('index', {
       title: 'Schedule App',
-      head: 'Schedules',
+      head: 'Dashboard',
       message: "No records",
-      data: data
+      data: data,
     });
     /*res.json({
         data

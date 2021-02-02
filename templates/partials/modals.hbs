@@ -1,0 +1,64 @@
+<div class="modal fade" id="modals" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add New Schedule</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" class="" action="/add-schedule">
+                    <div class="form-group">
+                        <input type="hidden" name="completed" id="completed" value="false" class="form-control" placeholder="Title" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="titles" id="titles" class="form-control" placeholder="Title" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" name="notes" placeholder="Note" autofocus required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col">
+                                <input class="form-control" id="start_date" placeholder="Start Date" name="start_date" type="text" required>
+                            </div>
+                            <div class="col">
+                                <input class="form-control" id="end_date" placeholder="End Date" name="end_date" type="text" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-light" type="submit">Save <span class="fa fa-save"></span> </button>
+                        <button class="btn btn-reset float-right" type="reset">Clear <span class="fa fa-sync-alt"></span> </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<div class="modal fade" id="modal-info">
+    <div class="modal-dialog">
+        <div class="modal-content bg-info">
+            <div class="modal-header">
+                <h4 class="modal-title">Info Modal</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <p>One fine body&hellip;</p>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-outline-light">Save changes</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

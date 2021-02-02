@@ -69,14 +69,17 @@ nav {
     color: tomato; }
 
 .check {
-  color: #1ab7d1;
+  color: #7cdeef;
   font-size: 1em; }
   .check:hover {
     color: #1ab7d1; }
 
 .form-group input[type=radio][name=titles] {
   background-color: #00B7FF;
-  border-color: #4c4; }
+  border-color: white !important; }
+
+.delete:hover {
+  color: red !important; }
 
 @media (min-width: 768px) {
   .app-sidebar_toggle {
