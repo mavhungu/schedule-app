@@ -1,56 +1,66 @@
 <div class="row">
     <div class="col formContainer">
-        {{#data}}
-            <div class="card mb-1 {{_id}}" id="{{_id}}">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-10">
-                            <h3 class="">{{titles}}</h3>
-                            <p class=""> {{notes}}</p>
-                            <p class="text-muted disabled" style="font-size: 11px;"><span class="nav-icon fa fa-clock"></span> {{prettifyDate updated}}</p>
-                        </div>
-                        <div class="col-2">
-                            <div class="">
-                                <input type="radio" class="form-control delete form-check right mt-4" name="delete" value="{{_id}}" id='{{_id}}' title="Delete">
-                            </div>
+        {{!--#data}}
+        <div class="card mb-1 {{_id}}" id="{{_id}}" value="{{_id}}">
+            <div class="card-body nn {{_id}}" id="{{_id}}" type="nn" name="nn" value="{{_id}}">
+                <div class="row">
+                    <div class="col-10">
+                        <h3 class="text-lowercase">{{titles}}</h3>
+                        <p class="text-capitalize"> {{notes}}</p>
+                        <p class="text-muted disabled" style="font-size: 11px;">
+                            <span class="nav-icon fa fa-clock"></span> {{prettifyDate updated}}
+                        </p>
+                    </div>
+                    <div class="col-2">
+                        <div class="">
+                            <input type="radio" class="form-control delete form-check right mt-4" name="delete"
+                                value="{{_id}}" id='{{_id}}' title="Delete">
                         </div>
                     </div>
                 </div>
             </div>
-        {{/data}}
+        </div>
+        {{/data--}}
 
         {{#unless data}}
-            <div class="card mb-1 bg-info mt-3">
-                <div class="card-body">
-                    <div class="text-center">
-                        <h4 class="text-white">No Completed Task has been found</h4>
-                    </div>
+        <div class="card mb-1 bg-info mt-3">
+            <div class="card-body">
+                <div class="text-center">
+                    <h4 class="text-white">No Completed Task has been found</h4>
                 </div>
             </div>
+        </div>
         {{/unless}}
     </div>
 </div>
-    <div class="row">
-        <div class="col">
+<div class="row">
+    <div class="col">
         {{#data}}
-            <div class="card">
-                <div class="card-footer card-comments">
-                    <div class="card-comment">
-                        <!-- User image -->
-                        <!--img class="img-circle img-sm" src="/img/user3-128x128.jpg" alt="User Image"-->
-                        <input type="radio" class=" img-sm delete form-check" name="delete" value="{{_id}}" id='{{_id}}' title="Delete">
+        <div class="card mb-1" id="{{_id}}" value="{{_id}}">
+            <div class="card-footer card-comments">
+                <div class="card-comment">
+                    <!-- User image -->
+                    <img class="img-circle img-sm" src="/img/photo4.jpg" name="delete" alt="User Image" value="{{_id}}"
+                        id='{{_id}}' title="Delete">
+                    <!--input type="radio" class="img-sm delete form-check" name="delete" value="{{_id}}" id='{{_id}}' title="Delete"-->
 
-                        <div class="comment-text">
-                    <span class="username">
-                      {{titles}}
-                      <span class="text-muted float-right"><span class="nav-icon fa fa-clock"></span> 8:03 PM Today</span>
-                    </span><!-- /.username -->
-                            {{notes}}
-                        </div>
-                        <!-- /.comment-text -->
+                    <div class="comment-text">
+                        <span class="username">
+                            {{titles}}
+                            <span class="text-muted float-right"><span class="nav-icon fa fa-clock">
+                                </span> {{prettifyDate updated}}</span>
+                        </span><!-- /.username -->
+                        {{notes}}
+                    </div>
+                    <!-- /.comment-text -->
+                    <div class="card-body">
+                        <button type="button" class="btn btn-default btn-sm delete" onclick="" name="delete"
+                            value='{{_id}}' id='{{_id}}'>
+                            <i class="far fa-trash-alt"></i> Delete</button>
                     </div>
                 </div>
             </div>
-        {{/data}}
         </div>
+        {{/data}}
     </div>
+</div>

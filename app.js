@@ -18,6 +18,7 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 moment().format();
+moment().locale();
 // view engine setup
 app.set('view engine', 'hbs');
 app.set('views',viewPath);
@@ -26,11 +27,28 @@ hbs.registerHelper("prettifyDate", function(updated) {
   return moment(new Date(updated)).fromNow();
 });
 hbs.registerHelper("prettifyDate", function(created) {
-  return moment(new Date(created)).fromNow();
+  let time =  moment(new Date(created)).format('LT');
+  let day = moment(new Date(created)).calendar({
+    sameDay: '[Today]',
+    nextDay: '[Tomorrow]',
+    nextWeek: 'dddd',
+    lastDay: '[Yesterday]',
+    lastWeek: '[Last] dddd',
+    sameElse: 'DD/MM/YYYY'
 });
-hbs.registerHelper("prettify", function(end_date) {
-  return moment(new Date(end_date)).calendar();
+  return time +' '+ day;
 });
+hbs.registerHelper("prettifyDate", function(end_date) {
+  let date = moment(new Date(end_date)).format('L');
+  let k = moment().format('L');
+  console.log(date);
+    console.log("****" + k + "****\n");
+  if(date >= k){
+    console.log("####" + date + "####");
+    return date
+  }
+});
+
 
 app.use(logger('dev'));
 app.use(cors());

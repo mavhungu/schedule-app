@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{title}}</title>
+    <link rel="shortcut icon" href="/images/icons/search.svg">
+    <link rel="stylesheet" href="/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/switchery.min.css">
+</head>
+
+<body class="app">
+    <!-- Preloader -->
+    <div class="preloader"></div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+
+                <!-- Main content -->
+                <section class="content">
+                    <div class="error-page">
+                        <h2 class="headline text-warning">{{error.status}}</h2>
+
+                        <div class="error-content">
+                            <h3><i class="fas fa-exclamation-triangle text-warning"></i> Oops! Page not found.</h3>
+
+                            <p>
+                                We could not find the page you were looking for.
+                                Meanwhile, you may <a href="/">return to dashboard</a> or try using the search form.
+                            </p>
+                            <form class="search-form">
+                                <div class="input-group">
+                                    <input type="text" name="search" class="form-control" placeholder="Search">
+
+                                    <div class="input-group-append">
+                                        <button type="submit" name="submit" class="btn btn-warning"><i
+                                                class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- /.input-group -->
+                            </form>
+                        </div>
+                        <!-- /.error-content -->
+                    </div>
+                    <!-- /.error-page -->
+                </section>
+                <!-- /.content -->
+
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/preload.js"></script>
+<script src="/javascripts/bootstrap.js"></script>
+<script src="/javascripts/complete.js"></script>
+<script src="/javascripts/costume.js"></script>
+<script src="/javascripts/switchery.min.js"></script>
+
+<!--script src="https://code.jquery.com/jquery-1.12.4.js"></script-->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</html>

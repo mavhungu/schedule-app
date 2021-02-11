@@ -1,7 +1,9 @@
 <footer class="app-footer">
     <div class="py-3 mx-3">
-        <span>Copyright &copy; 2019 - <script>document.write(new Date().getFullYear());</script>
-            <a href="" style="text-decoration: none;">Ronewa.io</a>.</span>
+        <span>Copyright &copy; 2019 -
+            <script>document.write(new Date().getFullYear());</script>
+            <a href="" style="text-decoration: none;">Ronewa.io</a>.
+        </span>
         All rights reserved.
         <div class="float-right d-none d-sm-block">
             <span>Version</span> 3.0.1
@@ -36,11 +38,11 @@
 
 <!--script-- src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script-->
 <script>
-    $( function() {
-        $( "#end_date" ).datepicker();
-        $( "#start_date" ).datepicker();
+    $(function () {
+        $("#end_date").datepicker();
+        $("#start_date").datepicker();
         $("#dates").datepicker();
-    } );
+    });
     /*var d = new Date(),
             day = '' + d.getDate(),
             month = '' + (d.getMonth() + 1),
@@ -51,7 +53,6 @@
 <script>
     $(function () {
         "use strict";
-
         /*
          * DONUT CHART
          * -----------
@@ -60,17 +61,17 @@
         var donutData = [
             {
                 label: "Series2",
-                data : 30,
+                data: 45,
                 color: "#3c8dbc"
             },
             {
                 label: "Series3",
-                data : 20,
+                data: 5,
                 color: "#0073b7"
             },
             {
                 label: "Series4",
-                data : 35,
+                data: 35,
                 color: "#00c0ef"
             },
             {
@@ -82,12 +83,12 @@
         $.plot("#donut-chart", donutData, {
             series: {
                 pie: {
-                    show       : true,
-                    radius     : 1,
+                    show: true,
+                    radius: 1,
                     innerRadius: 0.5,
-                    label      : {
-                        show     : true,
-                        radius   : 2 / 3,
+                    label: {
+                        show: true,
+                        radius: 2 / 3,
                         formatter: labelFormatter,
                         threshold: 0.1
                     }
@@ -101,20 +102,21 @@
         /*
          * END DONUT CHART
          */
+
         /*
  * BAR CHART
  * ---------
  */
 
         var bar_data = {
-            data : [[1,10], [2,8], [3,4], [4,13], [5,17], [6,9]],
+            data: [[1, 10], [2, 8], [3, 4], [4, 13], [5, 17], [6, 9]],
             bars: { show: true }
         };
         $.plot('#bar-chart', [bar_data], {
-            grid  : {
+            grid: {
                 borderWidth: 1,
                 borderColor: '#f3f3f3',
-                tickColor  : '#f3f3f3'
+                tickColor: '#f3f3f3'
             },
             series: {
                 bars: {
@@ -122,8 +124,8 @@
                 },
             },
             colors: ['#3c8dbc'],
-            xaxis : {
-                ticks: [[1,'January'], [2,'February'], [3,'March'], [4,'April'], [5,'May'], [6,'June']]
+            xaxis: {
+                ticks: [[1, 'January'], [2, 'February'], [3, 'March'], [4, 'April'], [5, 'May'], [6, 'June']]
             }
         });
         /* END BAR CHART */
@@ -136,8 +138,8 @@
      */
     function labelFormatter(label, series) {
         return '<div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">'
-                + label
-                + '<br>'
-                + Math.round(series.percent) + '%</div>'
+            + label
+            + '<br>'
+            + Math.round(series.percent) + '%</div>'
     }
 </script>

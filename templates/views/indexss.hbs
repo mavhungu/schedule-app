@@ -21,7 +21,6 @@
                     <!-- /.info-box -->
                 </a>
             </div>
-
             <!-- /.col -->
             <div class="col-md-3 col-sm-6 col-12">
                 <a href="/padding-schedules">
@@ -43,16 +42,16 @@
             </div>
             <!-- /.col -->
             <div class="col-md-3 col-sm-6 col-12">
-                <a href="events">
+                <a href="#">
                     <div class="info-box bg-warning">
                         <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>
 
                         <div class="info-box-content">
                             <span class="info-box-text">Events</span>
-                            <span class="info-box-number">{{events}}</span>
+                            <span class="info-box-number">5</span>
 
                             <div class="progress">
-                                <div class="progress-bar" style="width: {{events}}%"></div>
+                                <div class="progress-bar" style="width: 5%"></div>
                             </div>
                             <span class="progress-description"></span>
                         </div>
@@ -86,7 +85,6 @@
         <!-- /.row -->
     </div>
 </div>
-
 <div class="row">
     <div class="col-md-6">
         <!-- Donut chart -->
@@ -138,3 +136,45 @@
         <!-- /.card -->
     </div>
 </div>
+<!--div class="row">
+                <div class="col-lg-8 col-sm-12">
+                    <div class="form-group">
+                        <a role="button" class="btn btn-light text-light" type="button" data-target="#modals" data-toggle="modal">Add Schedule <span class="fa fa-plus"></span> </a>
+                    </div-->
+
+{{!#data}}
+<!--div class="card mb-1 {{_id}}" id="{{_id}}">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <h3 class="">{{titles}}</h3>
+                                        <p class="">{{notes}}</p>
+                                        <p class="text-muted disabled" style="font-size:11px;">{{prettifyDate created}}</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-group mt-4 text-center">
+                                            {{#if updated}}
+                                                <a role="button" class="times disabled text-danger" aria-disabled="true"><span class="fa fa-times fa-2x"></span> </a>
+                                            {{else}}
+                                                <a onclick="dd();" href="#" class="check" role="button" ><span class="fa fa-check fa-2x"></span> </a>
+                                                <p class="text-muted disabled text-center" style="font-size:11px;"> Due : {{prettify end_date}}</p>
+                                            {{/if}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{!/data}}
+
+                    {{!#unless data}}
+                        <div class="card mb-1 mt-3 bg-info">
+                            <div class="card-body">
+                                <div class="row">
+                                    <h4 class="text-white">No Task has been found</h4>
+                                </div>
+                            </div>
+                        </div-->
+{{!/unless}}
+
+<!--/div>
+            </div-->

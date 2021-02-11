@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{title}}</title>
-    <!--link rel='stylesheet' href='/stylesheets/style.css' /-->
-      <!-- Required meta tags -->
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="/css/app.css">
-      <!-- Theme style -->
-      <link rel="stylesheet" href="/css/adminlte.min.css">
-      <!-- Ionicons -->
-      <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-      <!-- Google Font: Source Sans Pro -->
-      <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-      <!--link rel='stylesheet' href='/stylesheets/style.css' /-->
-  </head>
-  <body class="app">
-    <div class="preloader"></div>
-      {{>header}}
-          {{>aside}}
-              <main class="app-content">
-                  {{>dynamic_header}}
-                  {{{body}}}
-              </main>
-                 {{>modals}}
-                    {{>footer}}
-  </body>
+
+<head>
+  <title>{{title}}</title>
+  <!--link rel='stylesheet' href='/stylesheets/style.css' /-->
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/app.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/css/adminlte.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <!--link rel='stylesheet' href='/stylesheets/style.css' /-->
+</head>
+
+<body class="app">
+  <div class="preloader"></div>
+  {{>header}}
+  {{>aside}}
+  <main class="app-content">
+    {{>dynamic_header}}
+    {{{body}}}
+  </main>
+  {{>modals}}
+  {{>footer}}
+</body>
+
 </html>

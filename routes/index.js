@@ -2,26 +2,60 @@ var express = require('express');
 var router = express.Router();
 var config = require('../mavhungu/mavhungu');
 var Notes = require('../db/Notes');
+const { count } = require('../db/Notes');
 
 /* GET home page. */
-router.get('/', function(req, res, next){
-  Notes.find({}).sort({ created: 'desc', titles: 'asc'}).then((data)=>{
-    //console.log(data);
-    if(!data){
-      return console.log("Nothing at the moment");
+router.get('/', async function(req, res, next){
+  
+  /*let pendings = await Notes.countDocuments({ completed: false }, function (err, pending) {
+    if (err){
+      console.log("Mavhungu ")
     }
-    res.render('index', {
-      title: 'Schedule App',
-      head: 'Dashboard',
-      message: "No records",
-      data: data,
+    //console.log('there are %d jungle adventures', pending);
+    return pending;
+  });*/
+  try{
+
+    let pending = await Notes.countDocuments({ completed: false }, function (err, pending) {
+      if (err){
+        console.log("Mavhungu ")
+      }
+      //console.log('there are %d jungle adventures', pending);
+      return pending;
+      
     });
-    /*res.json({
-        data
-    })*/
-  }).catch((e)=>{
+    let completed = await Notes.countDocuments({ completed: true }, function (err, completed) {
+      if (err){
+        console.log("Mavhungu ")
+      }
+      //console.log('there are %d jungle adventures', completed);
+      return completed;
+      
+    });
+    //let event = await Notes.find({end_date: true}, function(err, event){
+      let event = await Notes.find().exists('end_date');
+      let events = await Notes.countDocuments(event);
+    
+  let data = await Notes.find().sort({ created: 'desc', titles: 'asc'})//.then((data)=>{
+     // console.log(data);
+      if(!data){
+        res.render('index',{
+          messsge: "Nothing at the moment"
+        });
+      }
+      res.render('index', {
+        title: 'Schedule App',
+        head: 'Dashboard',
+        message: "No records",
+        data: data,
+        pending,
+        completed,
+        events
+      })
+  }catch(e){
     res.status(500).send(e)
-  })
+  }
+  
 });
 router.get('/add-schedule',(req, res)=>{
   res.render('new-schedule',{
@@ -112,14 +146,32 @@ router.get('/complete-schedule/:id', async (req, res)=>{
 router.get('/delete-schedule/:id',(req, res)=>{
     const id = req.params.id;
     Notes.findByIdAndDelete(id).then((data)=>{
-       Notes.find({}).then((task)=>{
-           res.render('completed-schedules', {
-               title: 'Schedule App',
-               head: 'Schedules',
-               data: task
-           })
-       })
+      Notes.find({}).then((task)=>{
+        res.render('completed-schedules', {
+              title: 'Schedule App',
+              head: 'Schedules',
+              data: task
+          })
+      })
     })
+});
+router.get('/events', async function(req, res){
+  try{
+    let data = await Notes.find({})
+    console.log(data);
+
+    if(!data){
+      return "Nothing has been found"
+    }
+    res.render('events',{
+      title: 'Schedule App',
+      head: `Scheduled Event's`,
+      data,
+      date : Date.now('Y')
+    });
+  }catch(e){
+    res.status(500).send(e)
+  }
 });
 
 module.exports = router;

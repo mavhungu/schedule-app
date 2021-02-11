@@ -1,63 +1,71 @@
 <div class="row">
     <div class="col col-sm-12">
-        {{#data}}
-            <div class="card mb-1 {{_id}}" id="{{_id}}">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-10">
-                            <h3 class="">{{titles}}</h3>
-                            <p class=""> {{notes}}</p>
-                            <p class="text-muted disabled" style="font-size:11px;">{{prettifyDate created}}</p>
-                        </div>
-                        <div class="col-2">
-                            <div class="form-group mt-4">
-                                <input type="radio" class="form-control update radio" name="titles" value='{{_id}}' id='{{_id}}' title="Updates">
-                                <span class=""></span>
-                            </div>
+        {{!--#data}}
+        <div class="card mb-1 {{_id}}" id="{{_id}}">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-10">
+                        <h3 class="">{{titles}}</h3>
+                        <p class=""> {{notes}}</p>
+                        <p class="text-muted disabled" style="font-size:11px;">{{prettifyDate created}}</p>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-group mt-4">
+                            <input type="radio" class="form-control update radio" name="titles" value='{{_id}}'
+                                id='{{_id}}' title="Updates">
+                            <span class=""></span>
                         </div>
                     </div>
                 </div>
             </div>
-        {{/data}}
+        </div>
+        {{/data--}}
 
         {{#unless data}}
-            <div class="card mb-1 mt-3 bg-info">
-                <div class="card-body">
-                    <div class="text-center">
-                        <h4 class="text-white text-center">No Padding Task has been found</h4>
-                    </div>
+        <div class="card mb-1 mt-3 bg-info">
+            <div class="card-body">
+                <div class="text-center">
+                    <h4 class="text-white text-center">No Padding Task has been found</h4>
                 </div>
             </div>
+        </div>
         {{/unless}}
     </div>
 </div>
 <div class="row">
     <div class="col">
         {{#data}}
-            <div class="card">
-                <div class="card-footer card-comments">
-                    <div class="card-comment">
-                        <!-- User image -->
-                        <img class="img-circle img-sm" src="/img/user3-128x128.jpg" alt="User Image">
-                        <!--input type="radio" class="img-sm update radio" name="titles" value='{{_id}}' id='{{_id}}' title="Updates"-->
-
-                        <div class="comment-text">
-                    <span class="username">
-                      {{titles}}
-                        <span class="text-muted float-right"><span class="nav-icon fa fa-clock"></span> 8:03 PM Today</span>
-                    </span><!-- /.username -->
-                            {{notes}}
-                        </div>
-                        <!-- /.comment-text -->
-                        <div class="card-body">
-                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt"></i> Edit</button>
-                            <button type="button" class="btn btn-default btn-sm update radio" name="titles" value='{{_id}}' id='{{_id}}'>
-                                <i class="far fa-trash-alt"></i> Delete</button>
-                        </div>
-                        <!-- /.card-body -->
+        <div class="card {{_id}}" id="{{_id}}">
+            <div class="card-footer card-comments">
+                <div class="card-comment">
+                    <!-- User image -->
+                    <img class="img-circle img-sm" src="/img/avatar.png" alt="User Image">
+                    <!--input type="radio" class="img-sm update radio" name="titles" value='{{_id}}' id='{{_id}}' title="Updates"-->
+                    <div class="comment-text">
+                        <span class="username">
+                            {{titles}}
+                            <span class="text-muted float-right"><span class="nav-icon fa fa-clock"></span>
+                                {{prettifyDate created}} </span>
+                        </span><!-- /.username -->
+                        {{notes}}
                     </div>
+                    <!-- /.comment-text -->
+                    <div class="card-body">
+                        <button type="button" class="btn btn-default btn-sm edit" name="edit" value='{{_id}}'
+                            id='{{_id}}' onclick="mt">
+                            <i class="fas fa-pencil-alt"></i>
+                            Complete</button>
+
+                        <!--button type="button" class="btn btn-default btn-sm update" onclick="" name="titles"
+                            value='{{_id}}' id='{{_id}}'>
+                            <i class="far fa-trash-alt"></i> Delete</button-->
+                    </div>
+                    <!-- /.card-body -->
                 </div>
             </div>
+        </div>
         {{/data}}
+
+
     </div>
 </div>

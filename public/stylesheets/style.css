@@ -10,6 +10,9 @@
 .card.hidden {
   display: none; }
 
+.card:hover {
+  cursor: pointer; }
+
 .lead {
   font-family: "Helvetica Neue"; }
 

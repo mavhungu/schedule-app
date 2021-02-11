@@ -4,6 +4,7 @@
         event.preventDefault();
         $(".app").toggleClass("app-slidebar-toggled");
     });
+
     $(".aside_minimise").click((event)=>{
         event.preventDefault();
         setTimeout(()=>{
