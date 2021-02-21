@@ -15,10 +15,12 @@ var viewPath = path.join(__dirname, 'templates/views');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var apiRoute = require('./routes/api/loginApi');
+var apiRoutereg = require('./routes/api/registerApi');
 
 var app = express();
 moment().format();
-moment().locale();
+//moment.locale();
 // view engine setup
 app.set('view engine', 'hbs');
 app.set('views',viewPath);
@@ -38,17 +40,13 @@ hbs.registerHelper("prettifyDate", function(created) {
 });
   return time +' '+ day;
 });
-hbs.registerHelper("prettifyDate", function(end_date) {
+/*hbs.registerHelper("prettifyDate", function(end_date) {
   let date = moment(new Date(end_date)).format('L');
   let k = moment().format('L');
-  console.log(date);
-    console.log("****" + k + "****\n");
   if(date >= k){
-    console.log("####" + date + "####");
     return date
   }
-});
-
+/*});*/
 
 app.use(logger('dev'));
 app.use(cors());
@@ -65,6 +63,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/api', apiRoute);
+app.use('/apireg',apiRoutereg);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -79,7 +79,11 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error',{
+    title: 'Schedule App',
+    head: '404 Error',
+    layout: 'ronewa'
+  });
 });
 
 module.exports = app;

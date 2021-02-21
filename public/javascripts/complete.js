@@ -9,7 +9,7 @@ $(()=>{
       $('#'+m).addClass('hidden');
       $.ajax({
          method: "GET",
-         url: "http://localhost:5000/complete-schedule/"+m,
+         url: "http://localhost:5000/users/complete-schedule/"+m,
          //url: "https://ronewa-schedule-app.herokuapp.com/complete-schedule/"+m,
       })
          .done(()=> {
@@ -22,7 +22,7 @@ $(()=>{
       $('#'+m).addClass('hidden');
       $.ajax({
          method: "GET",
-         url: "http://localhost:5000/delete-schedule/"+m,
+         url: "http://localhost:5000/users/delete-schedule/"+m,
          //url: "https://ronewa-schedule-app.herokuapp.com/complete-schedule/"+m,
       })
          .done(()=> {
@@ -35,7 +35,7 @@ $(()=>{
       $('#'+m).addClass('hidden');
       $.ajax({
          method: "GET",
-         url: "http://localhost:5000/complete-schedule/"+m,
+         url: "http://localhost:5000/users/complete-schedule/"+m,
          //url: "https://ronewa-schedule-app.herokuapp.com/complete-schedule/"+m,
       })
          .done(()=> {
@@ -50,7 +50,7 @@ $(()=>{
 
       $.ajax({
          method: "GET",
-         url: "http://localhost:5000/delete-schedule/"+com,
+         url: "http://localhost:5000/users/delete-schedule/"+com,
          //url: "https://ronewa-schedule-app.herokuapp.com/delete-schedule/"+com,
       })
          .done(()=> {
