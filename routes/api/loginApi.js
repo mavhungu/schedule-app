@@ -10,16 +10,20 @@ router.post('/login', async (req, res, next)=>{
   let password = userData.password.trim().toLowerCase();
   
   if(!password || !email){
-    return {
-      error: "Email / Password is empty"
-    }
+    throw new Error ("Email / Password is empty")
   }
     try{
       let user = await Users.findOne({email:email})
+      if(!user){
+        return res.send("Unable to login")
+      }
       let userpassword = await bcrypt.compare(password,user.password)
-      console.log(userpassword)
+      if(!userpassword){
+        return res.send("Password do not match")
+      }
+      console.log(user)
     }catch(error){
-      res.status(500).send(error);
+      res.status(400).send(error);
     }
   });
 

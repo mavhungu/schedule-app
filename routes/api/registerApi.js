@@ -16,12 +16,10 @@ router.post('/registerUser', async (req, res, next)=>{
   let password = await bcrypt.hash(password1,8);
 
   if(!name || !password1 || !email){
-    return "Username / Email / Password is empty";
+    return res.send("Username / Email / Password is empty")
   }
-
     let users = new Users({name, email, password})  
   try{
-
     await users.save()
     console.log("information have been saved")
     res.redirect('/');
