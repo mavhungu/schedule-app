@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var config = require('../mavhungu/mavhungu');
+//var config = require('../mavhungu/mavhungu');
 var Notes = require('../db/models/NotesModel');
 const { count } = require('../db/models/NotesModel');
 

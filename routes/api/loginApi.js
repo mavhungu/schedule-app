@@ -1,5 +1,6 @@
 var express = require('express');
 var bcrypt = require("bcrypt");
+var jwt = require("jsonwebtoken");
 var Users = require('../../db/models/UsersModel');
 var router = express.Router();
 
@@ -8,6 +9,11 @@ router.post('/login', async (req, res, next)=>{
   let userData = req.body;
   let email = userData.email.trim().toLowerCase();
   let password = userData.password.trim().toLowerCase();
+  
+  let token = jwt.sign({_id:'abc123'},'thisismynewcourse')
+  console.log(token);
+  let data = jwt.verify(token,'thisismynewcourse')
+  console.log(data)
   
   if(!password || !email){
     throw new Error ("Email / Password is empty")
