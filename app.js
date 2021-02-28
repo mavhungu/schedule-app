@@ -3,7 +3,7 @@ var express = require('express');
 var cors = require('cors');
 var path = require('path');
 var hbs = require('hbs');
-var moment = require('moment'); // require
+var moment = require('moment');
 
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
