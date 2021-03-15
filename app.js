@@ -13,6 +13,7 @@ var sassMiddleware = require('node-sass-middleware');
 var viewPartials = path.join(__dirname, 'templates/partials');
 var viewPath = path.join(__dirname, 'templates/views');
 
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var apiRoute = require('./routes/api/loginApi');
@@ -21,6 +22,7 @@ var apiRoutereg = require('./routes/api/registerApi');
 var app = express();
 moment().format();
 //moment.locale();
+
 // view engine setup
 app.set('view engine', 'hbs');
 app.set('views',viewPath);
@@ -48,6 +50,7 @@ hbs.registerHelper("prettifyDate", function(created) {
   }
 /*});*/
 
+//app.use(cc());
 app.use(logger('dev'));
 app.use(cors());
 app.use(express.json());

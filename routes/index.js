@@ -3,7 +3,7 @@ var router = express.Router();
 var slugify = require('slugify');
 //var config = require('../mavhungu/mavhungu');
 var Notes = require('../db/models/NotesModel');
-const { count } = require('../db/models/NotesModel');
+var {hasAuthorization,signout} = require('../midleware/auth');
 
 /* GET home page. */
 router.get('/', async (req, res, next)=>{
@@ -26,6 +26,17 @@ router.get('/register', async (req, res, next)=>{
     })
   }catch(e){
     res.status(500).send(e)
+  }
+});
+router.get('/signout', signout, async (req, res, next)=>{
+  try{
+    res.render("login",{
+      title: 'Schedule App',
+      head: 'Login',
+      layout: 'ronewa'
+    })
+  }catch(e){
+    res.status(400).send(e)
   }
 });
 

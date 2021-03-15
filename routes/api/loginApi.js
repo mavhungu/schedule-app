@@ -1,35 +1,30 @@
 var express = require('express');
-var bcrypt = require("bcrypt");
-var jwt = require("jsonwebtoken");
 var Users = require('../../db/models/UsersModel');
 var router = express.Router();
 
 router.post('/login', async (req, res, next)=>{
 
-  let userData = req.body;
-  let email = userData.email.trim().toLowerCase();
-  let password = userData.password.trim().toLowerCase();
-  
-  let token = jwt.sign({_id:'abc123'},'thisismynewcourse')
-  console.log(token);
-  let data = jwt.verify(token,'thisismynewcourse')
-  console.log(data)
-  
-  if(!password || !email){
-    throw new Error ("Email / Password is empty")
+  if(!req.body.password || !req.body.email){
+    throw new Error ("Email / Password is empty");
   }
     try{
-      let user = await Users.findOne({email:email})
-      if(!user){
-        return res.send("Unable to login")
-      }
-      let userpassword = await bcrypt.compare(password,user.password)
-      if(!userpassword){
-        return res.send("Password do not match")
-      }
-      console.log(user)
+      let user = await Users.findByCredentials(req.body.email,req.body.password);
+      let token = await user.generateAuthToken();
+      res.cookie('t', token, {
+        expire: new Date() + 9999
+      });
+      //console.log({user,token});
+     /* res.json({
+        token,
+        user:{
+          _id: user._id,
+          name: user.name,
+          email: user.email
+        }
+      });*/
+      return res.redirect('/users');
     }catch(error){
-      res.status(400).send(error);
+      res.status(401).send(error);
     }
   });
 

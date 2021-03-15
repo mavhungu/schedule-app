@@ -1,8 +1,7 @@
 var express = require('express');
 var router = express.Router();
-//var config = require('../mavhungu/mavhungu');
 var Notes = require('../db/models/NotesModel');
-var Users = require('../db/models/UsersModel');
+var {hasAuthorization} = require('../midleware/auth');
 
 /* POT users listing. */
 router.post('/', async function(req, res, next) {
@@ -42,7 +41,7 @@ router.post('/', async function(req, res, next) {
     res.status(500).send(e)
   }
 });
-router.get('/', async function(req, res){
+router.get('/', hasAuthorization, async function(req, res){
   try{
     let pending = await Notes.countDocuments({ completed: false }, function (err, pending) {
       if (err){
@@ -58,9 +57,9 @@ router.get('/', async function(req, res){
     });
       let event = await Notes.find().exists('end_date');
       let events = await Notes.countDocuments(event);
-      let ronewa = await Users.find({});
-      console.log(ronewa);
-    
+      /*let ronewa = await Users.find({});
+      console.log(ronewa);*/
+
   let data = await Notes.find().sort({ created: 'desc', titles: 'asc'})
       if(!data){
         res.render('index',{
