@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var slugify = require('slugify');
-//var config = require('../mavhungu/mavhungu');
 var Notes = require('../db/models/NotesModel');
 var {hasAuthorization,signout} = require('../midleware/auth');
 

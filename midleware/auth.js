@@ -1,18 +1,20 @@
 var expressJwt = require('express-jwt');
+var jwt = require('jsonwebtoken');
 var config = require('../config');
 
 /*const requireSignin = expressJwt({
     secret: config.jwtSecret,
     userProperty: 'auth'
 });*/
-const hasAuthorization = (req,res, next)=>{
+const hasAuthorization = async (req,res, next)=>{
     let t = req.cookies.t;
-    console.log(t);
+    let token = jwt.verify(t,config.jwtSecret);
+    await console.log(token);
     next()
 };
-const signout = (req, res, next)=>{
+const signout = async (req, res, next)=>{
     res.clearCookie("t");
-    console.log('Cookie has been cleared');
+    await console.log('Cookie has been cleared');
     next()
 };
 
