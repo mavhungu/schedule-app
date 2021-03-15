@@ -30,11 +30,7 @@ router.get('/register', async (req, res, next)=>{
 });
 router.get('/signout', signout, async (req, res, next)=>{
   try{
-    res.render("login",{
-      title: 'Schedule App',
-      head: 'Login',
-      layout: 'ronewa'
-    })
+    res.redirect("/");
   }catch(e){
     res.status(400).send(e)
   }
