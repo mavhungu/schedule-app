@@ -34,10 +34,10 @@ const userSchema = new mongoose.Schema({
         default: Date.now
     }
 });
+
 userSchema.methods.getPublicProfile = function () {
     const user = this
     const userObject = user.toObject();
-    //console.log(userObject);
     delete userObject.password
     delete userObject.tokens
 

@@ -23,6 +23,7 @@ router.post('/login', async (req, res, next)=>{
           email: user.email
         }
       });*/
+      req.users = ({user: user.getPublicProfile(), token});
       return res.redirect('/users');
     }catch(e){
       res.status(401).send({error:"Email / Password is empty"});
