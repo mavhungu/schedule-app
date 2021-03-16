@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-//const jwtSecret = require('../../config');
+var config = require('../../config');
 var bcrypt = require("bcrypt");
 var jwt = require("jsonwebtoken");
 
@@ -37,7 +37,7 @@ const userSchema = new mongoose.Schema({
 
 userSchema.methods.generateAuthToken = async function () {
     const user = this
-    const token = jwt.sign({ _id: user._id.toString() }, 'thisismynewcourse');
+    const token = jwt.sign({ _id: user._id.toString() }, config.jwtSecret);
 
     user.tokens = user.tokens.concat({ token });
     await user.save();

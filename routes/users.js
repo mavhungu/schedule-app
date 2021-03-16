@@ -73,7 +73,8 @@ router.get('/', hasAuthorization, async function(req, res){
         data: data,
         pending,
         completed,
-        events
+        events,
+        user: req.user.name
       })
   }catch(e){
     res.status(500).send(e)
