@@ -43,6 +43,8 @@ router.post('/', async function(req, res, next) {
 });
 router.get('/', hasAuthorization, async function(req, res){
   try{
+    let user = req.user;
+    console.log(user);
     let pending = await Notes.countDocuments({ completed: false }, function (err, pending) {
       if (err){
         console.log("Mavhungu ")
@@ -57,8 +59,6 @@ router.get('/', hasAuthorization, async function(req, res){
     });
       let event = await Notes.find().exists('end_date');
       let events = await Notes.countDocuments(event);
-      /*let ronewa = await Users.find({});
-      console.log(ronewa);*/
 
   let data = await Notes.find().sort({ created: 'desc', titles: 'asc'})
       if(!data){
@@ -77,7 +77,7 @@ router.get('/', hasAuthorization, async function(req, res){
         user: req.user.name
       })
   }catch(e){
-    res.status(500).send(e)
+    res.status(401).send(e)
   }
 })
 router.get('/add-schedule',(req, res)=>{

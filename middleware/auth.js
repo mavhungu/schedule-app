@@ -13,7 +13,6 @@ const hasAuthorization = async (req,res, next)=>{
         let t = req.cookies.t;
         let token = jwt.verify(t,config.jwtSecret);
         let user = await Users.findOne({_id:token._id, 'tokens.token':t});
-        console.log(user);
         if(!user){
             throw new Error()
         }
