@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Notes = require('../db/models/NotesModel');
-var {hasAuthorization} = require('../midleware/auth');
+var {hasAuthorization} = require('../middleware/auth');
 
 /* POT users listing. */
 router.post('/', async function(req, res, next) {

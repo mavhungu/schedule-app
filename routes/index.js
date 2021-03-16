@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var slugify = require('slugify');
 var Notes = require('../db/models/NotesModel');
-var {hasAuthorization,signout} = require('../midleware/auth');
+var {hasAuthorization,signout} = require('../middleware/auth');
 
 /* GET home page. */
 router.get('/', async (req, res, next)=>{
