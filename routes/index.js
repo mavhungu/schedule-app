@@ -27,8 +27,10 @@ router.get('/register', async (req, res, next)=>{
     res.status(500).send(e)
   }
 });
-router.get('/signout', signout, async (req, res, next)=>{
+router.get('/signout',hasAuthorization, signout, async (req, res, next)=>{
   try{
+    req.user.tokens = []
+    await req.user.save();
     res.redirect("/");
   }catch(e){
     res.status(400).send(e)

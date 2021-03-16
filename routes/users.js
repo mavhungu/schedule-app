@@ -44,7 +44,7 @@ router.post('/', async function(req, res, next) {
 router.get('/', hasAuthorization, async function(req, res){
   try{
     let user = req.user;
-    console.log(user);
+    //console.log(user);
     let pending = await Notes.countDocuments({ completed: false }, function (err, pending) {
       if (err){
         console.log("Mavhungu ")

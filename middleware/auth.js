@@ -24,9 +24,12 @@ const hasAuthorization = async (req,res, next)=>{
     }
 };
 const signout = async (req, res, next)=>{
+try{
     res.clearCookie("t");
-    await console.log('Cookie has been cleared');
     next()
+}catch(e){
+    res.status(500).send()
+}
 };
 
 module.exports = {hasAuthorization, signout};
