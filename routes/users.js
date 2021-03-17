@@ -79,6 +79,7 @@ router.get('/', hasAuthorization, async function(req, res){
         events,
         user: user.email,
         id: user
+        
       })
   }catch(e){
     res.status(401).send("Nothing has been found");
