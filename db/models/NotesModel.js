@@ -1,34 +1,18 @@
 const mongoose = require('mongoose');
-/*const schema = mongoose.Schema;
-const Notes = new schema({
-    titles:{
-        required: true,
+const userNotes = new mongoose.Schema({
+    id:{
         type: String,
-        trim: true
+            required: true
     },
-    notes:{
-        required: true,
-        type: String,
-        trim: true
-    }});
-module.exports = mongoose.model('notes', Notes);*/
-
-
-const Notes = mongoose.model('notes',{
     titles:{
         type: String,
-        required: true,
-        trim:true
-        /*validate(value){
-            if(!validator.isAlpha(value)){
-                throw new Error('Name can contain letters/Alpgabets')
-            }
-        }*/
+            required: true,
+            trim:true
     },
     notes:{
         type: String,
-        required: true,
-        trim:true
+            required: true,
+            trim:true
     },
     start_date:{
         type: Date
@@ -41,12 +25,17 @@ const Notes = mongoose.model('notes',{
     },
     created:{
         type: Date,
-        default: Date.now
+    default: Date.now
     },
     updated:{
         type: Date
     }
 
 });
+
+//module.exports = mongoose.model('notes', Notes);
+
+
+const Notes = mongoose.model('notes',userNotes);
 
 module.exports = Notes;

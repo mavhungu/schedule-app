@@ -1,5 +1,3 @@
-var expressJwt = require('express-jwt');
-var express = require('express');
 var jwt = require('jsonwebtoken');
 var config = require('../config');
 var Users = require('../db/models/UsersModel');

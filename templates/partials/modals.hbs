@@ -8,7 +8,13 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form method="POST" class="" action="/add-schedule">
+                <form method="POST" class="" action="/users/add-schedule">
+                    {{#id}}
+                        <div class="form-group">
+                            <input type="hidden" name="id" id="IdUser" value="{{_id}}" class="form-control" placeholder="IdUser" required>
+                        </div>
+                    {{/id}}
+
                     <div class="form-group">
                         <input type="hidden" name="completed" id="completed" value="false" class="form-control" placeholder="Title" required>
                     </div>

@@ -4,7 +4,9 @@ var Notes = require('../db/models/NotesModel');
 var {hasAuthorization} = require('../middleware/auth');
 
 /* POT users listing. */
-router.post('/', async function(req, res, next) {
+router.post('/',hasAuthorization, async function(req, res, next) {
+
+  console.log(req.user._id);
 
   try{
     let pending = await Notes.countDocuments({ completed: false }, function (err, pending) {
@@ -35,25 +37,26 @@ router.post('/', async function(req, res, next) {
         data: data,
         pending,
         completed,
-        events
+        events,
+        id: req.user._id
       })
   }catch(e){
     res.status(500).send(e)
   }
 });
 router.get('/', hasAuthorization, async function(req, res){
+  console.log(req.user._id);
   try{
     let user = req.user;
-    console.log(user);
-    let pending = await Notes.countDocuments({ completed: false }, function (err, pending) {
+    let pending = await Notes.countDocuments({ completed: false,id:user._id}, function (err, pending) {
       if (err){
-        console.log("Mavhungu ")
+        throw new Error()
       }
       return pending;
     });
-    let completed = await Notes.countDocuments({ completed: true }, function (err, completed) {
+    let completed = await Notes.countDocuments({ completed: true,id:user._id}, function (err, completed) {
       if (err){
-        console.log("Mavhungu ")
+        throw new Error()
       }
       return completed;
     });
@@ -74,10 +77,11 @@ router.get('/', hasAuthorization, async function(req, res){
         pending,
         completed,
         events,
-        user: req.user.name
+        user: user.email,
+        id: user
       })
   }catch(e){
-    res.status(401).send(e)
+    res.status(401).send("Nothing has been found");
   }
 })
 router.get('/add-schedule',(req, res)=>{
@@ -86,9 +90,23 @@ router.get('/add-schedule',(req, res)=>{
   head: 'New Schedule'
   });
 });
-router.post('/add-schedule',(req, res)=>{
-  const data = new Notes(req.body);
+router.post('/add-schedule',hasAuthorization, async function(req, res){
+  let id = req.user._id;
+  let body = req.body;
   console.log(req.body);
+  try{
+    const data = new Notes(req.body);
+    await data.save();
+    //console.log({id:id,body});
+    if(!data){
+      throw new Error()
+    }
+    return res.redirect('/users')
+  }catch(e){
+    res.status(401).send({"Error":"Nothing have been saved"});
+  }
+
+  /*console.log({req.body,req.user._id});
   data.save().then((data)=>{
     if(!data){
       return res.render('new-schedule',{
@@ -96,46 +114,52 @@ router.post('/add-schedule',(req, res)=>{
         head: 'Error'
       })
     }
-      res.redirect(303,'/users')
+
   }).catch((e)=>{
-    res.status(500).send(e)
-  });
+
+  });*/
 });
-router.get('/padding-schedules',(req, res)=>{
-  Notes.find({completed: false}).sort({created: 'desc'}).then((data)=>{
+router.get('/padding-schedules',hasAuthorization, async function (req, res){
+  let user = req.user;
+  Notes.find({completed: false,id:user._id}).sort({created: 'desc'}).then((data)=>{
     if(!data){
       console.log("No data");
       return res.render('completed-schedules',{
         title: 'Schedule App',
         head: 'Completed Task\'s',
-        data: 'No record has been found'
+        data: 'No record has been found',
+        id: user
       });
     }
     res.render('padding-schedules',{
       title: 'Schedule App',
       head: `Padding Task's`,
-      data: data
+      data: data,
+      id: user
     })
   }).catch((e)=>{
     res.status(500).send(e)
   })
 });
-router.get('/completed-schedules',(req, res)=>{
-  Notes.find({completed: true}).sort({ updated: 'desc'}).then((data)=>{
+router.get('/completed-schedules',hasAuthorization, async function (req, res){
+  let user = req.user;
+  Notes.find({completed: true,id:user._id}).sort({ updated: 'desc'}).then((data)=>{
     if(!data){
       res.render('completed-schedules',{
         title: 'Schedule App',
         head: `Finished Task's`,
-        nodata: 'No record has been found'
+        nodata: 'No record has been found',
+        id: user
       })
     }
     res.render('completed-schedules',{
       title: 'Schedule App',
       head: `Finished Task's`,
-      data: data
+      data: data,
+      id: user
     })
   }).catch((e)=>{
-    res.status(500).send(e)
+    res.status(401).send(e)
   })
 });
 router.get('/complete-schedule/:id', async (req, res)=>{
