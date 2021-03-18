@@ -2,10 +2,6 @@ var jwt = require('jsonwebtoken');
 var config = require('../config');
 var Users = require('../db/models/UsersModel');
 
-/*const requireSignin = expressJwt({
-    secret: config.jwtSecret,
-    userProperty: 'auth'
-});*/
 const hasAuthorization = async (req,res, next)=>{
     try{
         let t = req.cookies.t;
