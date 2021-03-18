@@ -12,7 +12,6 @@ router.post('/login', async (req, res, next)=>{
       let token = await user.generateAuthToken();
       let tt = await user.getPublicProfile();
       console.log({tt, token});
-      //console.log({user: user.getPublicProfile(), token});
       res.cookie('t', token, {
         expire: new Date() + 9999
       });
