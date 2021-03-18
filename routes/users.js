@@ -6,18 +6,16 @@ var {hasAuthorization} = require('../middleware/auth');
 /* POT users listing. */
 router.post('/',hasAuthorization, async function(req, res, next) {
 
-  console.log(req.user._id);
-
   try{
     let pending = await Notes.countDocuments({ completed: false }, function (err, pending) {
       if (err){
-        console.log("Mavhungu ")
+        throw new Error()
       }
       return pending;
     });
     let completed = await Notes.countDocuments({ completed: true }, function (err, completed) {
       if (err){
-        console.log("Mavhungu ")
+        throw new Error()
       }
       return completed;
     });
@@ -39,6 +37,7 @@ router.post('/',hasAuthorization, async function(req, res, next) {
         completed,
         events,
         id: req.user._id
+
       })
   }catch(e){
     res.status(500).send(e)
@@ -79,7 +78,7 @@ router.get('/', hasAuthorization, async function(req, res){
         events,
         user: user.email,
         id: user
-        
+
       })
   }catch(e){
     res.status(401).send("Nothing has been found");
@@ -92,13 +91,13 @@ router.get('/add-schedule',(req, res)=>{
   });
 });
 router.post('/add-schedule',hasAuthorization, async function(req, res){
-  let id = req.user._id;
-  let body = req.body;
-  console.log(req.body);
+
   try{
-    const data = new Notes(req.body);
+    const data = new Notes({
+      ...req.body,
+      id: req.user._id
+    });
     await data.save();
-    //console.log({id:id,body});
     if(!data){
       throw new Error()
     }
@@ -106,19 +105,6 @@ router.post('/add-schedule',hasAuthorization, async function(req, res){
   }catch(e){
     res.status(401).send({"Error":"Nothing have been saved"});
   }
-
-  /*console.log({req.body,req.user._id});
-  data.save().then((data)=>{
-    if(!data){
-      return res.render('new-schedule',{
-        title: 'Error',
-        head: 'Error'
-      })
-    }
-
-  }).catch((e)=>{
-
-  });*/
 });
 router.get('/padding-schedules',hasAuthorization, async function (req, res){
   let user = req.user;
@@ -178,9 +164,7 @@ router.get('/complete-schedule/:id', async (req, res)=>{
           title: 'Schedule App',
           head: 'Schedules',
           data: task
-        })/*.catch((e) => {
-          res.status(500).send(e)
-        })*/
+        })
       });
     })
 });
@@ -189,9 +173,9 @@ router.get('/delete-schedule/:id',(req, res)=>{
     Notes.findByIdAndDelete(id).then((data)=>{
       Notes.find({}).then((task)=>{
         res.render('completed-schedules', {
-              title: 'Schedule App',
-              head: 'Schedules',
-              data: task
+            title: 'Schedule App',
+            head: 'Schedules',
+            data: task
           })
       })
     })
@@ -199,7 +183,6 @@ router.get('/delete-schedule/:id',(req, res)=>{
 router.get('/events', async function(req, res){
   try{
     let data = await Notes.find({})
-    console.log(data);
 
     if(!data){
       return "Nothing has been found"
