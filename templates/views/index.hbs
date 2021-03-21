@@ -1,144 +1,144 @@
 <div class="content-header">
     <div class="container-fluid">
-<div class="row mb-2">
-    <div class="col">
-        <!--h5 class="mt-4 mb-2">Info Box With <code>bg-*</code></h5-->
+        <div class="row mb-2">
+            <div class="col">
+                <!--h5 class="mt-4 mb-2">Info Box With <code>bg-*</code></h5-->
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <a href="/users/padding-schedules">
+                            <div class="info-box bg-info">
+                                <span class="info-box-icon"><i class="far fa-bookmark"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Pending</span>
+                                    <span class="info-box-number">{{pending}}</span>
+
+                                    <div class="progress">
+                                        <div class="progress-bar" style="width: {{pending}}%"></div>
+                                    </div>
+                                    <!--span-- class="progress-description">{{pending}}% Increase in 30 Days</span-->
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </a>
+                    </div>
+
+                    <!-- /.col -->
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <a href="/users/completed-schedules">
+                            <div class="info-box bg-success">
+                                <span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Completed</span>
+                                    <span class="info-box-number">{{completed}}</span>
+
+                                    <div class="progress">
+                                        <div class="progress-bar" style="width: {{completed}}%"></div>
+                                    </div>
+                                    <!--span class="progress-description">{{completed}}% Increase in 30 Days</span-->
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </a>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <a href="/users/events">
+                            <div class="info-box bg-warning">
+                                <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Events</span>
+                                    <span class="info-box-number">{{events}}</span>
+
+                                    <div class="progress">
+                                        <div class="progress-bar" style="width: {{events}}%"></div>
+                                    </div>
+                                    <!--span-- class="progress-description"></span-->
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </a>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="info-box bg-danger">
+                            <span class="info-box-icon"><i class="fas fa-comments"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">Comments</span>
+                                <span class="info-box-number">{{user}}</span>
+
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 41%"></div>
+                                </div>
+                                <!--span-- class="progress-description">
+                                    5% Increase in 30 Days
+                                </span-->
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div>
+        </div>
+
         <div class="row">
-            <div class="col-md-3 col-sm-6 col-12">
-                <a href="/users/padding-schedules">
-                    <div class="info-box bg-info">
-                        <span class="info-box-icon"><i class="far fa-bookmark"></i></span>
+            <div class="col-md-6">
+                <!-- Donut chart -->
+                <!--div-- class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="far fa-chart-bar"></i>
+                            Overall Chart
+                        </h3>
 
-                        <div class="info-box-content">
-                            <span class="info-box-text">Pending</span>
-                            <span class="info-box-number">{{pending}}</span>
-
-                            <div class="progress">
-                                <div class="progress-bar" style="width: {{pending}}%"></div>
-                            </div>
-                            <!--span-- class="progress-description">{{pending}}% Increase in 30 Days</span-->
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
+                            </button>
                         </div>
-                        <!-- /.info-box-content -->
                     </div>
-                    <!-- /.info-box -->
-                </a>
+                    <div class="card-body">
+                        <div id="donut-chart" style="height: 300px;"></div>
+                    </div-->
+                    <!-- /.card-body-->
+                <!--/div-->
+                <!-- /.card -->
             </div>
 
-            <!-- /.col -->
-            <div class="col-md-3 col-sm-6 col-12">
-                <a href="/users/completed-schedules">
-                    <div class="info-box bg-success">
-                        <span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">Completed</span>
-                            <span class="info-box-number">{{completed}}</span>
+            <div class="col-md-6">
+                <!-- Bar chart -->
+                <!--div-- class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="far fa-chart-bar"></i>
+                            Comments Chart
+                        </h3>
 
-                            <div class="progress">
-                                <div class="progress-bar" style="width: {{completed}}%"></div>
-                            </div>
-                            <!--span class="progress-description">{{completed}}% Increase in 30 Days</span-->
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                <i class="fas fa-times"></i>
+                            </button>
                         </div>
-                        <!-- /.info-box-content -->
                     </div>
-                    <!-- /.info-box -->
-                </a>
+                    <div class="card-body">
+                        <div id="bar-chart" style="height: 300px;"></div>
+                    </div-->
+                    <!-- /.card-body-->
+                <!--/div-->
+                <!-- /.card -->
             </div>
-            <!-- /.col -->
-            <div class="col-md-3 col-sm-6 col-12">
-                <a href="/users/events">
-                    <div class="info-box bg-warning">
-                        <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>
-
-                        <div class="info-box-content">
-                            <span class="info-box-text">Events</span>
-                            <span class="info-box-number">{{events}}</span>
-
-                            <div class="progress">
-                                <div class="progress-bar" style="width: {{events}}%"></div>
-                            </div>
-                            <!--span-- class="progress-description"></span-->
-                        </div>
-                        <!-- /.info-box-content -->
-                    </div>
-                    <!-- /.info-box -->
-                </a>
-            </div>
-            <!-- /.col -->
-            <div class="col-md-3 col-sm-6 col-12">
-                <div class="info-box bg-danger">
-                    <span class="info-box-icon"><i class="fas fa-comments"></i></span>
-
-                    <div class="info-box-content">
-                        <span class="info-box-text">Comments</span>
-                        <span class="info-box-number">{{user}}</span>
-
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 41%"></div>
-                        </div>
-                        <!--span-- class="progress-description">
-                            5% Increase in 30 Days
-                        </span-->
-                    </div>
-                    <!-- /.info-box-content -->
-                </div>
-                <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
         </div>
-        <!-- /.row -->
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-6">
-        <!-- Donut chart -->
-        <div class="card">
-            <div class="card-header">
-                <h3 class="card-title">
-                    <i class="far fa-chart-bar"></i>
-                    Overall Chart
-                </h3>
-
-                <div class="card-tools">
-                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-                    </button>
-                    <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="card-body">
-                <div id="donut-chart" style="height: 300px;"></div>
-            </div>
-            <!-- /.card-body-->
-        </div>
-        <!-- /.card -->
-    </div>
-
-    <div class="col-md-6">
-        <!-- Bar chart -->
-        <div class="card">
-            <div class="card-header">
-                <h3 class="card-title">
-                    <i class="far fa-chart-bar"></i>
-                    Comments Chart
-                </h3>
-
-                <div class="card-tools">
-                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                        <i class="fas fa-minus"></i>
-                    </button>
-                    <button type="button" class="btn btn-tool" data-card-widget="remove">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="card-body">
-                <div id="bar-chart" style="height: 300px;"></div>
-            </div>
-            <!-- /.card-body-->
-        </div>
-        <!-- /.card -->
-    </div>
-</div>
     </div>
 </div>
