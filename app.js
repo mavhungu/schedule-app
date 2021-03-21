@@ -21,7 +21,6 @@ var apiRoutereg = require('./routes/api/registerApi');
 
 var app = express();
 moment().format();
-//moment.locale();
 
 // view engine setup
 app.set('view engine', 'hbs');

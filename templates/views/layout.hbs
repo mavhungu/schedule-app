@@ -8,8 +8,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="/css/app.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="/css/adminlte.min.css">
   <!-- Ionicons -->
@@ -17,27 +17,23 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <!--link rel='stylesheet' href='/stylesheets/style.css' /-->
-
-    <!-- Tempusdominus Bbootstrap 4 -->
-    <link rel="stylesheet" href="/css/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-    <!-- iCheck -->
-    <link rel="stylesheet" href="/css/icheck-bootstrap/icheck-bootstrap.min.css">
-    <!-- JQVMap -->
-    <link rel="stylesheet" href="/css/jqvmap/jqvmap.min.css">
+  <!-- Fonts -->
+  <link rel='stylesheet' href='/css/fonts.css'>
 
 </head>
 
-<body class="app">
+<body class="sidebar-mini" style="height: auto;">
+<div class="wrapper">
   <div class="preloader"></div>
   {{>header}}
   {{>aside}}
-  <main class="app-content">
-    {{>dynamic_header}}
-    {{{body}}}
-  </main>
+      <div class="content-wrapper" style="min-height: 807px;">
+        {{>dynamic_header}}
+        {{{body}}}
+      </div>
   {{>modals}}
   {{>footer}}
+</div>
 </body>
 
 </html>
