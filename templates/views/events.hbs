@@ -1,8 +1,10 @@
-<div class="row">
-    <div class="col col-sm-12">
-        {{#data}}
-        <!-- timeline item -->
-        <!--div>
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col col-sm-12">
+                {{#data}}
+                <!-- timeline item -->
+                <!--div>
             <i class="fas fa-comments bg-yellow"></i>
             <div class="timeline-item">
                 <span class="time"><i class="fas fa-clock"></i> {{prettifyDate end_date}}</span>
@@ -17,28 +19,30 @@
                 </div>
             </div>
         </div-->
-        <!-- END timeline item -->
-        <div class="card mb-1" id="{{_id}}" value="{{_id}}">
-            <div class="card-footer card-comments">
-                <div class="card-comment">
-                    <!-- User image -->
-                    <img class="img-circle img-sm" src="/img/photo4.jpg" name="delete" alt="User Image" value="{{_id}}"
-                        id='{{_id}}' title="Delete">
-                    <!--input type="radio" class="img-sm delete form-check" name="delete" value="{{_id}}" id='{{_id}}' title="Delete"-->
+                <!-- END timeline item -->
+                <div class="card mb-1" id="{{_id}}" value="{{_id}}">
+                    <div class="card-footer card-comments">
+                        <div class="card-comment">
+                            <!-- User image -->
+                            <img class="img-circle img-sm" src="/img/photo4.jpg" name="delete" alt="User Image"
+                                value="{{_id}}" id='{{_id}}' title="Delete">
+                            <!--input type="radio" class="img-sm delete form-check" name="delete" value="{{_id}}" id='{{_id}}' title="Delete"-->
 
-                    <div class="comment-text">
-                        <span class="username">
-                            {{titles}}
-                            <span class="text-muted float-right"><span class="nav-icon fa fa-clock">
-                                </span> {{prettifyDate end_date}}</span>
-                        </span><!-- /.username -->
-                        {{notes}}
-                        {{date}}
+                            <div class="comment-text">
+                                <span class="username">
+                                    {{titles}}
+                                    <span class="text-muted float-right"><span class="nav-icon fa fa-clock">
+                                        </span> {{prettifyDate end_date}}</span>
+                                </span><!-- /.username -->
+                                {{notes}}
+                                {{date}}
+                            </div>
+
+                        </div>
                     </div>
-
                 </div>
+                {{/data}}
             </div>
         </div>
-        {{/data}}
     </div>
 </div>
