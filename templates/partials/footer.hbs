@@ -1,30 +1,57 @@
 <!-- Main Footer -->
-<footer class="main-footer">
-		<span>Copyright &copy; 2019 -
-            <script>document.write(new Date().getFullYear());</script>
-            <a href="#" style="text-decoration: none;">Ronewa.io</a>.
-        </span>
+<footer class="main-footer text-sm">
+    <span>Copyright &copy; 2019 -
+        <script>document.write(new Date().getFullYear());</script>
+        <a href="#" style="text-decoration: none;">Ronewa.io</a>.
+    </span>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-        <b>Version</b> 3.0.1
+        <span>Version</span> 3.0.1
     </div>
 </footer>
-<div id="sidebar-overlay"></div>
-<!--/div-->
+<!--div-- id="sidebar-overlay"></div-->
+</div>
 <!-- ./wrapper -->
-
 
 <!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
-<script src="/js/jquery.min.js.download"></script>
+<script src="/js/jquery.min.js"></script>
+<!-- jQuery UI -->
+<script src="/js/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+    $.widget.bridge('uibutton', $.ui.button);
+</script>
 <!-- Bootstrap -->
-<script src="/js/bootstrap.bundle.min.js.download"></script>
-<!-- AdminLTE -->
-<script src="/js/adminlte.js.download"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
 <!-- Moment -->
 <script src="/js/moment/moment.min.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<!--script src="/js/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script-->
+<!-- Summernote -->
+<!--script src="/js/summernote/summernote-bs4.min.js"></script-->
+<!-- overlayScrollbars -->
+<!--script src="/js/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script-->
+<!-- AdminLTE -->
+<script src="/js/adminlte.js"></script>
+<!-- AdminLTE for demo purposes -->
+<!--script src="/js/demo.js"></script-->
+
+
 <!-- Preload -->
 <script src="/javascripts/preload.js"></script>
 <script src="/javascripts/complete.js"></script>
 <script src="/javascripts/costume.js"></script>
+
+<!-- DatePicker -->
+<script>
+    $(function () {
+        $("#end_date").datepicker();
+        $("#start_date").datepicker();
+        $("#dates").datepicker();
+    });
+</script>
+</body>
+
+</html>

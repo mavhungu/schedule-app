@@ -1,0 +1,11 @@
+@media (min-width: 768px) {
+
+}
+@media (max-width: 767.98px) {
+
+}
+@media (max-width: 480px) {
+    li .rr{
+        display: none;
+    }
+}
