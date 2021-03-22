@@ -4466,7 +4466,9 @@ readers do not read off random characters that represent icons */
 
 
     
-/* Preload style */
+/*!
+* Preload style 
+*/
 
 .preloader{
     position:fixed;
@@ -4480,3 +4482,27 @@ readers do not read off random characters that represent icons */
     background-repeat:no-repeat;
     background-image:url(../../images/icons/preloader.svg);
   }
+
+  /*!
+  * Modal style
+  */
+
+.change {
+color: #bfbfbf; }
+.btn-light {
+background: #ffc04d !important;
+border-radius: 12px 0 12px 0;
+color: white !important; }
+.btn-light:hover {
+color: white; }
+.btn-light:active {
+color: white; }
+
+.btn-reset {
+background: #ffa494 !important;
+border-radius: 0px 12px 0px 12px;
+color: white !important; }
+.btn-reset:hover {
+color: white; }
+.btn-reset:active {
+color: white; }
