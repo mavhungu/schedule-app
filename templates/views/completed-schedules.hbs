@@ -6,7 +6,7 @@
                 <div class="card mb-1 bg-info mt-3">
                     <div class="card-body">
                         <div class="text-center">
-                            <h4 class="text-white">No Completed Task has been found</h4>
+                            <h4 class="text-white text-md">No Completed Task has been found</h4>
                         </div>
                     </div>
                 </div>
@@ -25,10 +25,8 @@
                     <div class="card-footer card-comments">
                         <div class="card-comment">
                             <!-- User image -->
-                            <img class="img-circle img-sm" src="/img/photo4.jpg" name="delete" alt="User Image" value="{{_id}}"
-                                id='{{_id}}' title="Delete">
-                            <!--input type="radio" class="img-sm delete form-check" name="delete" value="{{_id}}" id='{{_id}}' title="Delete"-->
-
+                            <img class="img-circle img-sm" src="/img/photo4.jpg" name="delete" alt="User Image"
+                                value="{{_id}}" id='{{_id}}' title="Delete">
                             <div class="comment-text">
                                 <span class="username">
                                     {{titles}}
@@ -41,7 +39,8 @@
                             <div class="card-body">
                                 <button type="button" class="btn btn-default btn-sm delete" onclick="" name="delete"
                                     value='{{_id}}' id='{{_id}}'>
-                                    <i class="far fa-trash-alt"></i> Delete</button>
+                                    <i class="far fa-trash-alt"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
