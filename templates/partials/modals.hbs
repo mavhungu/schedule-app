@@ -10,13 +10,15 @@
             <div class="modal-body">
                 <form method="POST" class="" action="/users/add-schedule">
                     {{#id}}
-                        <div class="form-group">
-                            <input type="hidden" name="id" id="IdUser" value="{{_id}}" class="form-control" placeholder="IdUser" required>
-                        </div>
+                    <div class="form-group">
+                        <input type="hidden" name="id" id="IdUser" value="{{_id}}" class="form-control"
+                            placeholder="IdUser" required>
+                    </div>
                     {{/id}}
 
                     <div class="form-group">
-                        <input type="hidden" name="completed" id="completed" value="false" class="form-control" placeholder="Title" required>
+                        <input type="hidden" name="completed" id="completed" value="false" class="form-control"
+                            placeholder="Title" required>
                     </div>
                     <div class="form-group">
                         <input type="text" name="titles" id="titles" class="form-control" placeholder="Title" required>
@@ -28,16 +30,48 @@
                     <div class="form-group">
                         <div class="form-row">
                             <div class="col">
-                                <input class="form-control" id="start_date" placeholder="Start Date" name="start_date" type="text" required>
+                                <input class="form-control" id="start_date" placeholder="Start Date" name="start_date"
+                                    type="text" required>
                             </div>
                             <div class="col">
-                                <input class="form-control" id="end_date" placeholder="End Date" name="end_date" type="text" required>
+                                <input class="form-control" id="end_date" placeholder="End Date" name="end_date"
+                                    type="text" required>
                             </div>
                         </div>
                     </div>
+                    <!-- phone mask -->
+                    <div class="form-group">
+                        <label class="text-muted">RSA Code:</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                            </div>
+                            <input type="text" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask>
+                        </div>
+                        <!-- /.input group -->
+                    </div>
+                    <!-- /.form group -->
+
+                    <!-- Date range -->
+                    <div class="form-group">
+                        <label class="text-muted">Date range:</label>
+
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="far fa-calendar-alt"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control float-right" id="reservation">
+                        </div>
+                        <!-- /.input group -->
+                    </div>
+                    <!-- /.form group -->
+
                     <div class="form-group">
                         <button class="btn btn-light" type="submit">Save <span class="fa fa-save"></span> </button>
-                        <button class="btn btn-reset float-right" type="reset">Clear <span class="fa fa-sync-alt"></span> </button>
+                        <button class="btn btn-reset float-right" type="reset">Clear <span
+                                class="fa fa-sync-alt"></span> </button>
                     </div>
                 </form>
             </div>

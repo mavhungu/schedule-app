@@ -27,8 +27,11 @@
 <script src="/js/bootstrap.bundle.min.js"></script>
 <!-- Moment -->
 <script src="/js/moment/moment.min.js"></script>
+<script src="/js/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+<!-- date-range-picker -->
+<script src="/js/daterangepicker/daterangepicker.js"></script>
 <!-- Tempusdominus Bootstrap 4 -->
-<!--script src="/js/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script-->
+<script src="/js/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 <!-- Summernote -->
 <!--script src="/js/summernote/summernote-bs4.min.js"></script-->
 <!-- overlayScrollbars -->
@@ -50,6 +53,23 @@
         $("#end_date").datepicker();
         $("#start_date").datepicker();
         $("#dates").datepicker();
+
+        $("[data-mask]").inputmask();
+
+        //Date range picker
+        $('#reservationdate').datetimepicker({
+            format: 'L'
+        });
+        //Date range picker
+        $('#reservation').daterangepicker();
+        //Date range picker with time picker
+        $('#reservationtime').daterangepicker({
+            timePicker: true,
+            timePickerIncrement: 30,
+            locale: {
+                format: 'MM/DD/YYYY hh:mm A'
+            }
+        });
     });
 </script>
 </body>
