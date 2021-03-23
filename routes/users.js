@@ -197,5 +197,11 @@ router.get('/events', async function(req, res){
     res.status(500).send(e)
   }
 });
+router.get('/inbox', (req, res)=>{
+  res.render('inbox',{
+    title: 'Schedule App',
+    head: 'Inbox',
+  })
+})
 
 module.exports = router;
