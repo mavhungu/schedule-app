@@ -33,7 +33,7 @@
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="/js/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 <!-- Summernote -->
-<!--script src="/js/summernote/summernote-bs4.min.js"></script-->
+<script src="/js/summernote/summernote-bs4.min.js"></script>
 <!-- overlayScrollbars -->
 <!--script src="/js/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script-->
 <!-- AdminLTE -->
@@ -55,6 +55,8 @@
         $("#dates").datepicker();
 
         $("[data-mask]").inputmask();
+        //Add text editor
+        $('#compose-textarea').summernote();
 
         //Date range picker
         $('#reservationdate').datetimepicker({

@@ -44,7 +44,7 @@ router.post('/',hasAuthorization, async function(req, res, next) {
   }
 });
 router.get('/', hasAuthorization, async function(req, res){
-  console.log(req.user._id);
+  //console.log(req.user._id);
   try{
     let user = req.user;
     let pending = await Notes.countDocuments({ completed: false,id:user._id}, function (err, pending) {
@@ -198,14 +198,12 @@ router.get('/events', async function(req, res){
   }
 });
 router.get('/inbox', hasAuthorization, async function(req, res,next){
-  /*res.render('mailbox',{
-    title: 'Schedule App',
-    head: 'Inbox',
-  });
-  */try{
+try{
+  let user = req.user;
     res.render('mailbox',{
       title: 'Schedule App',
       head: 'Inbox',
+      dd: user.name
     });
   }catch(e){
     res.status(401).send(e)
