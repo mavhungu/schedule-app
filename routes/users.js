@@ -197,11 +197,15 @@ router.get('/events', async function(req, res){
     res.status(500).send(e)
   }
 });
-router.get('/inbox', (req, res)=>{
-  res.render('inbox',{
-    title: 'Schedule App',
-    head: 'Inbox',
-  })
-})
+router.get('/inbox', async function(req, res){
+  try{
+    res.render('inbox',{
+      title: 'Schedule App',
+      head: 'Inbox',
+    });
+  }catch(e){
+    res.status(401).send(e)
+  }
+});
 
 module.exports = router;
