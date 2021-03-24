@@ -72,6 +72,19 @@
                 format: 'MM/DD/YYYY hh:mm A'
             }
         });
+        $("#sent_hide").hide();
+        $("#inbox_hide").hide();
+
+        $("#sent_click").click(()=>{
+            $("#inbox_hide").hide();
+            console.log("sent_hide clicked");
+            $("#sent_hide").show();
+        });
+        $("#inbox_click").click(()=>{
+            $("#sent_hide").hide();
+            console.log("inbox_hide clicked");
+            $("#inbox_hide").show();
+        });
     });
 </script>
 </body>
