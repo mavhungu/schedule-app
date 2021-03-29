@@ -31,6 +31,7 @@ router.post('/',hasAuthorization, async function(req, res, next) {
       res.render('index', {
         title: 'Schedule App',
         head: 'Dashboard',
+          header: 'Dashboard',
         message: "No records",
         data: data,
         pending,
@@ -71,6 +72,7 @@ router.get('/', hasAuthorization, async function(req, res){
       res.render('index', {
         title: 'Schedule App',
         head: 'Dashboard',
+          header: 'Dashboard',
         message: "No records",
         data: data,
         pending,
@@ -83,7 +85,7 @@ router.get('/', hasAuthorization, async function(req, res){
   }catch(e){
     res.status(401).send("Nothing has been found");
   }
-})
+});
 router.get('/add-schedule',(req, res)=>{
   res.render('new-schedule',{
   title: 'Add-Schedule',
@@ -111,9 +113,10 @@ router.get('/padding-schedules',hasAuthorization, async function (req, res){
   Notes.find({completed: false,id:user._id}).sort({created: 'desc'}).then((data)=>{
     if(!data){
       console.log("No data");
-      return res.render('completed-schedules',{
+      return res.render('padding-schedules',{
         title: 'Schedule App',
-        head: 'Completed Task\'s',
+        head: 'Padding Task\'s',
+          header: 'Padding Task',
         data: 'No record has been found',
         id: user
       });
@@ -121,6 +124,7 @@ router.get('/padding-schedules',hasAuthorization, async function (req, res){
     res.render('padding-schedules',{
       title: 'Schedule App',
       head: `Padding Task's`,
+        header: 'Padding Task',
       data: data,
       id: user
     })
@@ -135,6 +139,7 @@ router.get('/completed-schedules',hasAuthorization, async function (req, res){
       res.render('completed-schedules',{
         title: 'Schedule App',
         head: `Finished Task's`,
+          header: 'Completed Task',
         nodata: 'No record has been found',
         id: user
       })
@@ -142,6 +147,7 @@ router.get('/completed-schedules',hasAuthorization, async function (req, res){
     res.render('completed-schedules',{
       title: 'Schedule App',
       head: `Finished Task's`,
+      header: 'Completed Task',
       data: data,
       id: user
     })
@@ -203,11 +209,27 @@ try{
     res.render('mailbox',{
       title: 'Schedule App',
       head: 'Inbox',
-      dd: user.name
+      header: 'Mailbox',
+      dd: user.name,
+      user: user.email,
     });
   }catch(e){
     res.status(401).send(e)
   }
+});
+router.get('/profiles',hasAuthorization, async function(req, res){
+  try{
+    let user = req.user;
+  res.render('UserProfile',{
+          title: 'Schedule App',
+          header: 'Mailbox',
+          head: 'User Profile',
+          dd: user.name,
+          user: user.email,
+      });
+    }catch(e){
+      res.status(401).send({"Error":"no profile"});
+    }
 });
 
 
